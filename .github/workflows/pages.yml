@@ -1,0 +1,80 @@
+# Deploys the static site to GitHub Pages.
+# Settings > Pages > Build and deployment > Source must be "GitHub Actions".
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Reject root-absolute assets and private addresses
+        run: |
+          python3 - << 'PY'
+          import pathlib, re, sys
+          root = pathlib.Path(".")
+          bad = []
+          attr = re.compile(r"""(?:href|src)\s*=\s*["']/(?!/)""")
+          css_url = re.compile(r"""url\(\s*["']?/(?!/)""")
+          private_ip = re.compile(
+              r"""\b(?:10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|172\.(?:1[6-9]|2\d|3[0-1])\.\d{1,3}\.\d{1,3})\b"""
+          )
+          suffixes = {".html", ".css", ".js", ".svg", ".md", ".txt"}
+          for path in root.rglob("*"):
+              if not path.is_file():
+                  continue
+              if any(part in {".git", ".github"} for part in path.parts):
+                  continue
+              if path.suffix.lower() not in suffixes:
+                  continue
+              text = path.read_text(encoding="utf-8", errors="replace")
+              if path.suffix.lower() in {".html", ".js", ".svg"} and attr.search(text):
+                  bad.append(f"{path}: root-absolute href or src")
+              if path.suffix.lower() == ".css" and css_url.search(text):
+                  bad.append(f"{path}: root-absolute CSS url")
+              if private_ip.search(text):
+                  bad.append(f"{path}: private IP address")
+          if bad:
+              print("\n".join(bad))
+              sys.exit(1)
+          print("path check ok")
+          PY
+
+      - name: Assemble site
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          test "$(tr -d '[:space:]' < CNAME)" = "flintandsteelnetwork.com"
+          cp -a index.html config.js favicon.svg CNAME css js fonts _site/
+          touch _site/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+          include-hidden-files: true
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
