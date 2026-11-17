@@ -208,14 +208,29 @@
         </div>
       </div>
       <p class="section-intro">Minecraft cards check in live. Copy an address, or open a map where we have one. Valheim stays a join code.</p>
+      <p class="game-jumps">
+        <a href="#minecraft">Minecraft</a>
+        <a href="#more-servers">More on the Network</a>
+      </p>
       <p class="checked" id="status-checked">Checking servers…</p>
-      <div class="server-grid">
+      <section class="game-group" id="minecraft" aria-labelledby="minecraft-title">
+        <div class="game-banner">
+          <svg class="game-emblem" viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="6" y="10" width="14" height="14" fill="#2a241e"/>
+            <rect x="6" y="10" width="14" height="4" fill="#ff6a2a"/>
+            <polygon points="20,10 28,6 28,20 20,24" fill="#1a1612"/>
+            <polygon points="6,10 14,6 28,6 20,10" fill="#ffb020"/>
+            <rect x="9" y="16" width="4" height="4" fill="#ffc56b"/>
+          </svg>
+          <h3 id="minecraft-title">Minecraft</h3>
+        </div>
+        <div class="server-grid">
         <article class="server-card" id="atm10" data-server="atm10" data-game="minecraft" data-address="atm10.flintandsteelnetwork.com">
           <div class="card-kicker">
             <span class="code">ATM10</span>
             <span class="chip">Discord whitelist</span>
           </div>
-          <h3>All the Mods 10</h3>
+          <h4>All the Mods 10</h4>
           <p class="platform">NeoForge 1.21.1</p>
           <p class="blurb">Modded tech. The whitelist is linked through Discord.</p>
           <code class="address">atm10.<wbr>flintandsteelnetwork.<wbr>com</code>
@@ -236,7 +251,7 @@
             <span class="code">VANILLA</span>
             <span class="chip">Open</span>
           </div>
-          <h3>Vanilla Survival</h3>
+          <h4>Vanilla Survival</h4>
           <p class="platform">Paper</p>
           <p class="blurb">Castle spawn. Open to anyone — add the address and play.</p>
           <code class="address">vanilla.<wbr>flintandsteelnetwork.<wbr>com</code>
@@ -257,7 +272,7 @@
             <span class="code">CABAB</span>
             <span class="chip">Discord whitelist</span>
           </div>
-          <h3>Create: Above and Beyond</h3>
+          <h4>Create: Above and Beyond</h4>
           <p class="platform">Create modpack 1.16.5</p>
           <p class="blurb">The 1.16.5 Create modpack. Whitelisted through Discord.</p>
           <code class="address">cabab.<wbr>flintandsteelnetwork.<wbr>com</code>
@@ -277,7 +292,7 @@
             <span class="code">COBBLEMON</span>
             <span class="chip">Discord whitelist</span>
           </div>
-          <h3>Cobblemon</h3>
+          <h4>Cobblemon</h4>
           <p class="platform">Pokemon modpack</p>
           <p class="blurb">Pokemon modpack with a Pokemon-center themed spawn. Whitelisted through Discord.</p>
           <code class="address">cobblemon.<wbr>flintandsteelnetwork.<wbr>com</code>
@@ -291,13 +306,28 @@
           </p>
           <span class="sr-only" data-announce aria-live="polite"></span>
         </article>
+        </div>
+      </section>
 
+      <section class="game-group" id="more-servers" aria-labelledby="more-servers-title">
+        <div class="game-banner game-banner-more">
+          <svg class="game-emblem" viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="4" y="12" width="12" height="12" fill="#ff6a2a"/>
+            <rect x="15" y="6" width="13" height="13" fill="none" stroke="#e8b15a" stroke-width="3"/>
+            <rect x="19" y="10" width="5" height="5" fill="#f6efe4"/>
+          </svg>
+          <div>
+            <h3 id="more-servers-title">More on the Network</h3>
+            <p>Other servers on our network</p>
+          </div>
+        </div>
+        <div class="server-grid">
         <article class="server-card" id="valheim" data-server="valheim" data-game="valheim">
           <div class="card-kicker">
             <span class="code">VALHEIM</span>
             <span class="chip">Join code</span>
           </div>
-          <h3>Valheim</h3>
+          <h4>Valheim</h4>
           <p class="platform">Crossplay</p>
           <p class="blurb">Crossplay world. Steam and Xbox players use the same join code.</p>
           <div class="join-code-block">
@@ -315,7 +345,9 @@
           </p>
           <span class="sr-only" data-announce aria-live="polite"></span>
         </article>
-      </div>
+        <!-- Palworld card goes here. Copy a server-card article into this grid when that world is public. -->
+        </div>
+      </section>
     </section>
 
     <section class="section" id="join">
