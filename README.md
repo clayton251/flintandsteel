@@ -2,7 +2,7 @@
 
 Static site for the Flint and Steel community. It is plain HTML, CSS, and JavaScript. There is no backend, no secrets, and no analytics.
 
-The live site is intended for [https://clayton251.github.io/flintandsteel/](https://clayton251.github.io/flintandsteel/). Asset links are relative, so the same files also work at the root of a custom domain.
+The public site is [https://flintandsteelnetwork.com/](https://flintandsteelnetwork.com/). Asset paths are relative, so the same files also work under [https://clayton251.github.io/flintandsteel/](https://clayton251.github.io/flintandsteel/) before the custom domain is enforced.
 
 ## Edit the site
 
@@ -44,10 +44,17 @@ After this workflow is on `main`:
 3. That choice is applied when you select it. The current Pages form has no separate Save button.
 4. If the deploy that ran when the workflow landed on `main` failed because Pages was still off, open the **Actions** tab, select **Deploy static content to Pages**, and choose **Re-run all jobs**. You can also use **Run workflow** on that workflow.
 
-A green run serves <https://clayton251.github.io/flintandsteel/>.
+A green run serves <https://clayton251.github.io/flintandsteel/> until the custom domain is saved. After that, the site is <https://flintandsteelnetwork.com/>.
 
 If a run fails with a token permissions error, open **Settings → Actions → General → Workflow permissions**, choose **Read and write permissions**, save, and re-run the workflow.
 
-A custom apex domain is **Settings → Pages → Custom domain** later. No path rewrite is required in the site files.
+The published artifact includes a `CNAME` file containing `flintandsteelnetwork.com`. With a GitHub Actions source, that file is not enough on its own. On **Settings → Pages**, after Source is **GitHub Actions**:
+
+1. Under **Custom domain**, enter `flintandsteelnetwork.com` (the apex only: no `https://`, no path, no `www`).
+2. Click **Save**.
+3. Wait until the DNS check for that domain succeeds. Leave the existing apex A records and the `www` CNAME as DNS-only.
+4. When **Enforce HTTPS** becomes available, check it. GitHub leaves the box disabled until the certificate is issued, which is often a few minutes and can take up to a day. It saves when you check it.
+
+`www.flintandsteelnetwork.com` should redirect to the apex once that certificate is active. Do not add a `<base>` tag.
 
 Fonts are Press Start 2P, Russo One, and Source Sans 3, under the SIL Open Font License. See [`fonts/OFL.txt`](fonts/OFL.txt).

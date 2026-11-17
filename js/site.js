@@ -512,7 +512,10 @@
     document.title = cfg.name;
     var description = document.querySelector('meta[name="description"]');
     if (description && cfg.tagline) {
-      description.setAttribute("content", cfg.tagline + " " + (cfg.about || cfg.lede || ""));
+      var summary = cfg.tagline + " " + (cfg.about || cfg.lede || "");
+      description.setAttribute("content", summary);
+      var ogDescription = document.querySelector('meta[property="og:description"]');
+      if (ogDescription) ogDescription.setAttribute("content", summary);
     }
 
     var menuApi = function (toggle, mobile) { openMenu(toggle, mobile); };
