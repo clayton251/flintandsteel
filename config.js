@@ -3,8 +3,8 @@
    When you change an address, vote link, or description, update both files.
    Use public hostnames only. Do not add LAN IPs, internal hostnames, or ports.
 
-   Cobblemon: `address` is a PLACEHOLDER. Leave addressConfirmed set to false
-   until the hostname is confirmed, then set it to true and clear addressNote.
+   Join addresses are the public SRV names. Do not add a port.
+   The live map links stay on their current HTTP URLs until those move.
 
    Vote links use each site's vote page when that page has its own URL.
    Modded Minecraft Servers and TopG put the vote form on the listing, at #vote. */
@@ -24,7 +24,7 @@ window.FNS_CONFIG = {
       game: "minecraft",
       platform: "NeoForge 1.21.1",
       blurb: "Modded tech. The whitelist is linked through Discord.",
-      address: "atm10.flintandsteel.playit.plus",
+      address: "atm10.flintandsteelnetwork.com",
       addressConfirmed: true,
       access: "Discord whitelist",
       mapUrl: "http://atm10map.flintandsteel.playit.plus:43450",
@@ -46,7 +46,7 @@ window.FNS_CONFIG = {
       game: "minecraft",
       platform: "Paper",
       blurb: "Castle spawn. Open to anyone — add the address and play.",
-      address: "vanilla.flintandsteel.playit.plus",
+      address: "vanilla.flintandsteelnetwork.com",
       addressConfirmed: true,
       access: "Open",
       mapUrl: "http://map.flintandsteel.playit.plus:45481",
@@ -63,7 +63,7 @@ window.FNS_CONFIG = {
       game: "minecraft",
       platform: "Create modpack 1.16.5",
       blurb: "The 1.16.5 Create modpack. Whitelisted through Discord.",
-      address: "cabab.flintandsteel.playit.plus",
+      address: "cabab.flintandsteelnetwork.com",
       addressConfirmed: true,
       access: "Discord whitelist",
       votes: [
@@ -85,10 +85,8 @@ window.FNS_CONFIG = {
       game: "minecraft",
       platform: "Pokemon modpack",
       blurb: "Pokemon modpack with a Pokemon-center themed spawn. Whitelisted through Discord.",
-      // PLACEHOLDER — confirm before treating this hostname as final.
-      address: "cobblemon.flintandsteel.playit.plus",
-      addressConfirmed: false,
-      addressNote: "Address to be confirmed.",
+      address: "cobblemon.flintandsteelnetwork.com",
+      addressConfirmed: true,
       access: "Discord whitelist",
       votes: [
         {

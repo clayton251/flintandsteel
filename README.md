@@ -8,7 +8,7 @@ The public site is [https://flintandsteelnetwork.com/](https://flintandsteelnetw
 
 Change servers, the Cobblemon placeholder, join steps, ranks, rules, and vote links in [`index.html`](index.html) and [`config.js`](config.js). The page text is in `index.html` so search engines can read it without JavaScript. Keep the addresses in both files the same.
 
-The Cobblemon hostname is marked `addressConfirmed: false` until it is confirmed. Minecraft addresses in that file are public hostnames only. Do not add LAN IPs, internal hostnames, or ports. The two public map links are the exception already listed there.
+Minecraft join addresses are the public SRV names on `flintandsteelnetwork.com`, with no port. Do not add LAN IPs, internal hostnames, or ports. The two public map links are the exception already listed there.
 
 The Discord invite in `config.js` is also written in the `noscript` block in `index.html`. Update both if the invite changes.
 
