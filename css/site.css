@@ -560,7 +560,7 @@ h2 {
   box-shadow: 5px 5px 0 #070605;
 }
 
-.game-banner-more {
+.game-banner-valheim {
   border-left-color: var(--gold);
   background:
     linear-gradient(90deg, rgba(232, 177, 90, 0.18), transparent 62%),

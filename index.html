@@ -210,7 +210,7 @@
       <p class="section-intro">Minecraft cards check in live. Copy an address, or open a map where we have one. Valheim stays a join code.</p>
       <p class="game-jumps">
         <a href="#minecraft">Minecraft</a>
-        <a href="#more-servers">More on the Network</a>
+        <a href="#valheim">Valheim</a>
       </p>
       <p class="checked" id="status-checked">Checking servers…</p>
       <section class="game-group" id="minecraft" aria-labelledby="minecraft-title">
@@ -309,20 +309,18 @@
         </div>
       </section>
 
-      <section class="game-group" id="more-servers" aria-labelledby="more-servers-title">
-        <div class="game-banner game-banner-more">
+      <section class="game-group" id="valheim" aria-labelledby="valheim-title">
+        <div class="game-banner game-banner-valheim">
           <svg class="game-emblem" viewBox="0 0 32 32" aria-hidden="true">
-            <rect x="4" y="12" width="12" height="12" fill="#ff6a2a"/>
-            <rect x="15" y="6" width="13" height="13" fill="none" stroke="#e8b15a" stroke-width="3"/>
-            <rect x="19" y="10" width="5" height="5" fill="#f6efe4"/>
+            <polygon points="15,3 15,18 26,18" fill="#f6efe4"/>
+            <rect x="14" y="3" width="2" height="17" fill="#e8b15a"/>
+            <polygon points="3,19 29,19 25,25 7,25" fill="#ff6a2a"/>
+            <rect x="6" y="26" width="20" height="2" fill="#2a241e"/>
           </svg>
-          <div>
-            <h3 id="more-servers-title">More on the Network</h3>
-            <p>Other servers on our network</p>
-          </div>
+          <h3 id="valheim-title">Valheim</h3>
         </div>
         <div class="server-grid">
-        <article class="server-card" id="valheim" data-server="valheim" data-game="valheim">
+        <article class="server-card" data-server="valheim" data-game="valheim">
           <div class="card-kicker">
             <span class="code">VALHEIM</span>
             <span class="chip">Join code</span>
@@ -345,9 +343,20 @@
           </p>
           <span class="sr-only" data-announce aria-live="polite"></span>
         </article>
-        <!-- Palworld card goes here. Copy a server-card article into this grid when that world is public. -->
         </div>
       </section>
+      <!--
+        Future game: copy the Valheim section above. Example:
+        <section class="game-group" id="palworld" aria-labelledby="palworld-title">
+          <div class="game-banner">
+            <svg class="game-emblem" viewBox="0 0 32 32" aria-hidden="true"></svg>
+            <h3 id="palworld-title">Palworld</h3>
+          </div>
+          <div class="server-grid">
+            <article class="server-card" data-server="palworld" data-game="palworld"></article>
+          </div>
+        </section>
+      -->
     </section>
 
     <section class="section" id="join">
