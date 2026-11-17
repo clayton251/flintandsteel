@@ -797,6 +797,28 @@ h2 {
   margin-bottom: 0.7rem;
 }
 
+.btn-kofi {
+  margin-top: 1.15rem;
+  background: linear-gradient(#ff934f, #e85d04);
+  color: #1a0d06;
+  border-color: #ffd7a8;
+}
+
+.btn-kofi svg {
+  display: block;
+  flex: none;
+}
+
+.footer-support {
+  color: var(--ash);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-support:hover {
+  color: var(--spark);
+}
+
 .site-footer {
   margin-top: 4rem;
   border-top: 2px solid var(--ember);
