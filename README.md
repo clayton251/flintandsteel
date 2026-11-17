@@ -6,9 +6,9 @@ The public site is [https://flintandsteelnetwork.com/](https://flintandsteelnetw
 
 ## Edit the site
 
-Change servers, the Cobblemon placeholder, join steps, ranks, rules, and vote links in [`index.html`](index.html) and [`config.js`](config.js). The page text is in `index.html` so search engines can read it without JavaScript. Keep the addresses in both files the same.
+Change servers, join steps, ranks, rules, and vote links in [`index.html`](index.html) and [`config.js`](config.js). The page text is in `index.html` so search engines can read it without JavaScript. Keep the addresses in both files the same.
 
-Minecraft join addresses are the public SRV names on `flintandsteelnetwork.com`, with no port. Do not add LAN IPs, internal hostnames, or ports. The two public map links are the exception already listed there.
+Minecraft join addresses are the public SRV names on `flintandsteelnetwork.com`, with no port. Do not add LAN IPs, internal hostnames, or ports. Live maps are `https://map.flintandsteelnetwork.com` and `https://atm10map.flintandsteelnetwork.com`. The public status page is only `https://status.flintandsteelnetwork.com`, with no extra path.
 
 The Discord invite in `config.js` is also written in the `noscript` block in `index.html`. Update both if the invite changes.
 
@@ -31,7 +31,7 @@ python3 -m http.server 8765
 
 Open `http://127.0.0.1:8765/flintandsteel/`.
 
-Live Minecraft status is loaded in the browser from `https://api.mcstatus.io`. The page does not request the HTTP map links.
+Live Minecraft status is loaded in the browser from `https://api.mcstatus.io`. The map and status pages are ordinary links. The site does not fetch them.
 
 ## GitHub Pages
 
