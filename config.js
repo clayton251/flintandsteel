@@ -1,19 +1,18 @@
 /* Flint and Steel Network — site config.
-   Edit this file to change servers, join steps, ranks, rules, and vote links.
+   The words players and search engines see are in index.html.
+   When you change an address, vote link, or description, update both files.
    Use public hostnames only. Do not add LAN IPs, internal hostnames, or ports.
-   Asset paths elsewhere in the site are relative, so a future apex domain needs no rewrite.
 
    Cobblemon: `address` is a PLACEHOLDER. Leave addressConfirmed set to false
    until the hostname is confirmed, then set it to true and clear addressNote.
 
    Vote links use each site's vote page when that page has its own URL.
-   Modded Minecraft Servers and TopG put the vote form on the listing, at #vote.
-   The Discord invite is also repeated in the noscript block in index.html. */
+   Modded Minecraft Servers and TopG put the vote form on the listing, at #vote. */
 window.FNS_CONFIG = {
   name: "Flint and Steel Network",
   tagline: "Strike a spark. Stay for the build.",
   about: "A veteran-run Minecraft and game server network.",
-  lede: "Modded packs, an open survival world, and Valheim crossplay.",
+  lede: "All the Mods 10, Create: Above and Beyond, Cobblemon, an open vanilla world, and a Valheim crossplay server.",
   discordUrl: "https://discord.gg/zWJfDJQcgP",
   comingSoon: "Palworld",
   voteMessage: "Every vote helps keep the servers online.",

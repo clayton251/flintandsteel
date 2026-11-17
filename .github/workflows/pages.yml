@@ -63,7 +63,22 @@ jobs:
           rm -rf _site
           mkdir -p _site
           test "$(tr -d '[:space:]' < CNAME)" = "flintandsteelnetwork.com"
-          cp -a index.html config.js favicon.svg CNAME css js fonts _site/
+          python3 - << 'PY'
+          import pathlib, re, sys
+          html = pathlib.Path("index.html").read_text(encoding="utf-8")
+          cfg = pathlib.Path("config.js").read_text(encoding="utf-8")
+          html_hosts = set(re.findall(r'data-address="([^"]+)"', html))
+          cfg_hosts = set(re.findall(r'address:\s*"([^"]+)"', cfg))
+          if html_hosts != cfg_hosts:
+              print("address mismatch", html_hosts, cfg_hosts)
+              sys.exit(1)
+          for needle in ("All the Mods 10", "Create: Above and Beyond", "Cobblemon", "Valheim", "308346"):
+              if needle not in html:
+                  print("missing static text", needle)
+                  sys.exit(1)
+          print("static copy matches config addresses")
+          PY
+          cp -a index.html config.js favicon.svg CNAME robots.txt sitemap.xml site.webmanifest css js fonts images _site/
           touch _site/.nojekyll
 
       - name: Setup Pages
