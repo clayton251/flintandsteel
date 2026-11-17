@@ -1,47 +1,60 @@
 # Flint and Steel Network
 
-Static site for the Flint and Steel community. It is plain HTML, CSS, and JavaScript. There is no backend, no account, and no tracker.
+Static site for the Flint and Steel community. It is plain HTML, CSS, and JavaScript. There is no backend, no secrets, and no analytics.
 
-Production URL: <https://clayton251.github.io/flintandsteel/>
+The public site is [https://flintandsteelnetwork.com/](https://flintandsteelnetwork.com/). Asset paths are relative, so the same files also work under [https://clayton251.github.io/flintandsteel/](https://clayton251.github.io/flintandsteel/) before the custom domain is enforced.
 
 ## Edit the site
 
-All servers, join steps, ranks, rules, vote links, the Discord invite, and the “coming soon” line live in [`config.js`](config.js).
+Change servers, the Cobblemon placeholder, join steps, ranks, rules, and vote links in [`config.js`](config.js).
 
-- Minecraft cards ping `https://api.mcstatus.io/v2/status/java/<address>` from the visitor’s browser.
-- Valheim does not get a status check. It shows the join code.
-- Vote buttons use each site’s vote page when that URL is a stable path. Modded Minecraft Servers and TopG take the vote on the listing itself, so those buttons open the listing.
-- Keep addresses as the public hostnames. Do not put LAN IPs, home hostnames, or private ports in this repo. The live-map links already in `config.js` are the only non-HTTPS URLs, and they are normal links, not fetches.
+The Cobblemon hostname is marked `addressConfirmed: false` until it is confirmed. Minecraft addresses in that file are public hostnames only. Do not add LAN IPs, internal hostnames, or ports. The two public map links are the exception already listed there.
 
-Cobblemon’s public address is `cobblemon.flintandsteel.playit.plus`. A status check answered, and the server’s message identified it as Flint and Steel Cobblemon. Change that one string in `config.js` if the hostname moves.
+The Discord invite in `config.js` is also written in the `noscript` block in `index.html`. Update both if the invite changes.
 
-## Preview locally on the Pages subpath
+## Preview
 
-Relative asset paths are used on purpose, so the site works at `/flintandsteel/` the same way it will on GitHub Pages.
+From this folder, for a domain-root preview:
 
 ```bash
-# from the parent of this repo
-python3 -m http.server 8080
+python3 -m http.server 8765
 ```
 
-Open <http://127.0.0.1:8080/flintandsteel/>.
+Open `http://127.0.0.1:8765/`.
 
-Serving this folder itself (`python3 -m http.server` inside the repo) also works, at `/`.
+For the GitHub project-page path, serve the parent folder while this repo is named `flintandsteel`:
+
+```bash
+cd ..
+python3 -m http.server 8765
+```
+
+Open `http://127.0.0.1:8765/flintandsteel/`.
+
+Live Minecraft status is loaded in the browser from `https://api.mcstatus.io`. The page does not request the HTTP map links.
 
 ## GitHub Pages
 
-The workflow is [`.github/workflows/pages.yml`](.github/workflows/pages.yml). It runs on every push to `main` and publishes the site with GitHub Actions. It does not deploy the README.
+Workflow: [`.github/workflows/pages.yml`](.github/workflows/pages.yml). It publishes on every push to `main`.
 
-Pages is not automatic until the repository source is set:
+After this workflow is on `main`:
 
-1. Merge the site to `main`.
-2. Open **Settings → Pages**: <https://github.com/clayton251/flintandsteel/settings/pages>
-3. Under **Build and deployment**, set **Source** to **GitHub Actions**. Do not choose “Deploy from a branch”.
-4. If a Save button is shown, click **Save**. Choosing GitHub Actions often applies immediately.
-5. Open the **Actions** tab and confirm **Deploy GitHub Pages** is green. If the first run failed because the source was still unset, use **Re-run jobs** after step 3.
+1. Open **Settings → Pages** for this repository: <https://github.com/clayton251/flintandsteel/settings/pages>
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. That choice is applied when you select it. The current Pages form has no separate Save button.
+4. If the deploy that ran when the workflow landed on `main` failed because Pages was still off, open the **Actions** tab, select **Deploy static content to Pages**, and choose **Re-run all jobs**. You can also use **Run workflow** on that workflow.
 
-The site then answers at <https://clayton251.github.io/flintandsteel/>.
+A green run serves <https://clayton251.github.io/flintandsteel/> until the custom domain is saved. After that, the site is <https://flintandsteelnetwork.com/>.
 
-## Fonts
+If a run fails with a token permissions error, open **Settings → Actions → General → Workflow permissions**, choose **Read and write permissions**, save, and re-run the workflow.
 
-Outfit and Pixelify Sans are self-hosted in `assets/fonts/` under the SIL Open Font License. License texts are in that folder. No requests are made to Google Fonts, and the page does not load analytics.
+The published artifact includes a `CNAME` file containing `flintandsteelnetwork.com`. With a GitHub Actions source, that file is not enough on its own. On **Settings → Pages**, after Source is **GitHub Actions**:
+
+1. Under **Custom domain**, enter `flintandsteelnetwork.com` (the apex only: no `https://`, no path, no `www`).
+2. Click **Save**.
+3. Wait until the DNS check for that domain succeeds. Leave the existing apex A records and the `www` CNAME as DNS-only.
+4. When **Enforce HTTPS** becomes available, check it. GitHub leaves the box disabled until the certificate is issued, which is often a few minutes and can take up to a day. It saves when you check it.
+
+`www.flintandsteelnetwork.com` should redirect to the apex once that certificate is active. Do not add a `<base>` tag.
+
+Fonts are Press Start 2P, Russo One, and Source Sans 3, under the SIL Open Font License. See [`fonts/OFL.txt`](fonts/OFL.txt).

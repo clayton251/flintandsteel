@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Flint and Steel">
-  <rect width="32" height="32" fill="#110e0c"/>
-  <rect x="1.5" y="1.5" width="29" height="29" fill="none" stroke="#ff6a1a" stroke-width="2"/>
-  <path d="M7 24 L14.2 8.5 h2.4 L11.2 24 Z" fill="#3f3a36"/>
-  <path d="M13 13.5 L26 7.2 l-1.6 4.2 4.2 1.2 -4.6 2.2 -1.2 4.4 -2.4-4.6 Z" fill="#e7eef3"/>
-  <rect x="14.2" y="14.2" width="4.2" height="4.2" fill="#ffb020"/>
-</svg>

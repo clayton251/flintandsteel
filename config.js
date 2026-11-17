@@ -1,222 +1,195 @@
-// Flint and Steel site config
-// Edit this file to change servers, join steps, ranks, rules, and vote links.
-// Keep every address as the public hostname players already use.
-// Do not add LAN IPs, home hostnames, or private ports.
+/* Flint and Steel Network — site config.
+   Edit this file to change servers, join steps, ranks, rules, and vote links.
+   Use public hostnames only. Do not add LAN IPs, internal hostnames, or ports.
+   Asset paths elsewhere in the site are relative, so a future apex domain needs no rewrite.
 
-window.FAS_CONFIG = {
+   Cobblemon: `address` is a PLACEHOLDER. Leave addressConfirmed set to false
+   until the hostname is confirmed, then set it to true and clear addressNote.
+
+   Vote links use each site's vote page when that page has its own URL.
+   Modded Minecraft Servers and TopG put the vote form on the listing, at #vote.
+   The Discord invite is also repeated in the noscript block in index.html. */
+window.FNS_CONFIG = {
   name: "Flint and Steel Network",
-  tagline: "A small public game-server community, run by Clayton, a veteran.",
-  discord: "https://discord.gg/zWJfDJQcgP",
+  tagline: "Strike a spark. Stay for the build.",
+  about: "A veteran-run Minecraft and game server network.",
+  lede: "Modded packs, an open survival world, and Valheim crossplay.",
+  discordUrl: "https://discord.gg/zWJfDJQcgP",
   comingSoon: "Palworld",
-  // Public status API. HTTPS and CORS-friendly. Do not switch this to an http page.
-  statusApi: "https://api.mcstatus.io/v2/status/java/",
-  voteNote: "Every vote helps keep the servers online.",
-
+  voteMessage: "Every vote helps keep the servers online.",
   servers: [
     {
       id: "atm10",
       name: "All the Mods 10",
-      short: "ATM",
-      kind: "java",
+      code: "ATM10",
+      game: "minecraft",
+      platform: "NeoForge 1.21.1",
+      blurb: "Modded tech. The whitelist is linked through Discord.",
       address: "atm10.flintandsteel.playit.plus",
-      blurb: "Modded tech on NeoForge 1.21.1. Discord-linked whitelist.",
-      tags: ["NeoForge 1.21.1", "Whitelist"],
-      map: "http://atm10map.flintandsteel.playit.plus:43450",
+      addressConfirmed: true,
+      access: "Discord whitelist",
+      mapUrl: "http://atm10map.flintandsteel.playit.plus:43450",
       votes: [
         {
           label: "Modded Minecraft Servers",
-          href: "https://moddedminecraftservers.com/server/flint-and-steel-network-all-the-mods-10.61130/"
+          url: "https://moddedminecraftservers.com/server/flint-and-steel-network-all-the-mods-10.61130/#vote"
         },
-        {
-          label: "Minecraft-MP",
-          href: "https://minecraft-mp.com/server/366978/vote/"
-        },
-        {
-          label: "FTB Servers",
-          href: "https://ftbservers.com/server/jekrTF3G/vote"
-        },
-        {
-          label: "MinecraftServers.org",
-          href: "https://minecraftservers.org/vote/696265"
-        },
-        {
-          label: "Minecraft Server List",
-          href: "https://minecraft-server-list.com/server/525025/vote/"
-        }
+        { label: "Minecraft MP", url: "https://minecraft-mp.com/server/366978/vote/" },
+        { label: "FTB Servers", url: "https://ftbservers.com/server/jekrTF3G/vote" },
+        { label: "MinecraftServers.org", url: "https://minecraftservers.org/vote/696265" },
+        { label: "Minecraft Server List", url: "https://minecraft-server-list.com/server/525025/vote/" }
       ]
     },
     {
       id: "vanilla",
       name: "Vanilla Survival",
-      short: "VAN",
-      kind: "java",
+      code: "VANILLA",
+      game: "minecraft",
+      platform: "Paper",
+      blurb: "Castle spawn. Open to anyone — add the address and play.",
       address: "vanilla.flintandsteel.playit.plus",
-      blurb: "Paper survival with a castle spawn. Open to everyone.",
-      tags: ["Paper", "Open"],
-      map: "http://map.flintandsteel.playit.plus:45481",
+      addressConfirmed: true,
+      access: "Open",
+      mapUrl: "http://map.flintandsteel.playit.plus:45481",
       votes: [
-        {
-          label: "Minecraft-MP",
-          href: "https://minecraft-mp.com/server/366990/vote/"
-        },
-        {
-          label: "MinecraftServers.org",
-          href: "https://minecraftservers.org/vote/696273"
-        },
-        {
-          label: "Minecraft Server List",
-          href: "https://minecraft-server-list.com/server/525029/vote/"
-        }
+        { label: "Minecraft MP", url: "https://minecraft-mp.com/server/366990/vote/" },
+        { label: "MinecraftServers.org", url: "https://minecraftservers.org/vote/696273" },
+        { label: "Minecraft Server List", url: "https://minecraft-server-list.com/server/525029/vote/" }
       ]
     },
     {
       id: "cabab",
       name: "Create: Above and Beyond",
-      short: "CAB",
-      kind: "java",
-      address: "cabab.flintandsteel.playit.plus",
+      code: "CABAB",
+      game: "minecraft",
+      platform: "Create modpack 1.16.5",
       blurb: "The 1.16.5 Create modpack. Whitelisted through Discord.",
-      tags: ["Minecraft 1.16.5", "Whitelist"],
-      map: "",
+      address: "cabab.flintandsteel.playit.plus",
+      addressConfirmed: true,
+      access: "Discord whitelist",
       votes: [
         {
           label: "Modded Minecraft Servers",
-          href: "https://moddedminecraftservers.com/server/flint-and-steel-network-create-above-and-beyond.61131/"
+          url: "https://moddedminecraftservers.com/server/flint-and-steel-network-create-above-and-beyond.61131/#vote"
         },
-        {
-          label: "Minecraft-MP",
-          href: "https://minecraft-mp.com/server/367005/vote/"
-        },
-        {
-          label: "FTB Servers",
-          href: "https://ftbservers.com/server/ZPZZRyCm/vote"
-        },
-        {
-          label: "MinecraftServers.org",
-          href: "https://minecraftservers.org/vote/696286"
-        },
-        {
-          label: "TopG",
-          href: "https://topg.org/minecraft-servers/server-688623#vote"
-        },
-        {
-          label: "Minecraft Server List",
-          href: "https://minecraft-server-list.com/server/525042/vote/"
-        }
+        { label: "Minecraft MP", url: "https://minecraft-mp.com/server/367005/vote/" },
+        { label: "FTB Servers", url: "https://ftbservers.com/server/ZPZZRyCm/vote" },
+        { label: "MinecraftServers.org", url: "https://minecraftservers.org/vote/696286" },
+        { label: "TopG", url: "https://topg.org/minecraft-servers/server-688623#vote" },
+        { label: "Minecraft Server List", url: "https://minecraft-server-list.com/server/525042/vote/" }
       ]
     },
     {
       id: "cobblemon",
-      // Public hostname. It answered a status check and the MOTD reads
-      // "Flint and Steel | Cobblemon". Change this string if the address moves.
       name: "Cobblemon",
-      short: "COB",
-      kind: "java",
-      address: "cobblemon.flintandsteel.playit.plus",
+      code: "COBBLEMON",
+      game: "minecraft",
+      platform: "Pokemon modpack",
       blurb: "Pokemon modpack with a Pokemon-center themed spawn. Whitelisted through Discord.",
-      tags: ["Whitelist"],
-      map: "",
+      // PLACEHOLDER — confirm before treating this hostname as final.
+      address: "cobblemon.flintandsteel.playit.plus",
+      addressConfirmed: false,
+      addressNote: "Address to be confirmed.",
+      access: "Discord whitelist",
       votes: [
         {
           label: "Modded Minecraft Servers",
-          href: "https://moddedminecraftservers.com/server/flint-and-steel-network-cobblemon.61132/"
+          url: "https://moddedminecraftservers.com/server/flint-and-steel-network-cobblemon.61132/#vote"
         },
-        {
-          label: "Minecraft-MP",
-          href: "https://minecraft-mp.com/server/367006/vote/"
-        },
-        {
-          label: "FTB Servers",
-          href: "https://ftbservers.com/server/EB8QvcZO/vote"
-        },
-        {
-          label: "MinecraftServers.org",
-          href: "https://minecraftservers.org/vote/696287"
-        },
-        {
-          label: "TopG",
-          href: "https://topg.org/minecraft-servers/server-688624#vote"
-        },
-        {
-          label: "Minecraft Server List",
-          href: "https://minecraft-server-list.com/server/525043/vote/"
-        }
+        { label: "Minecraft MP", url: "https://minecraft-mp.com/server/367006/vote/" },
+        { label: "FTB Servers", url: "https://ftbservers.com/server/EB8QvcZO/vote" },
+        { label: "MinecraftServers.org", url: "https://minecraftservers.org/vote/696287" },
+        { label: "TopG", url: "https://topg.org/minecraft-servers/server-688624#vote" },
+        { label: "Minecraft Server List", url: "https://minecraft-server-list.com/server/525043/vote/" }
       ]
     },
     {
       id: "valheim",
       name: "Valheim",
-      short: "VAL",
-      kind: "valheim",
-      blurb: "Crossplay. Join with the code — this world is not checked with Minecraft status.",
-      tags: ["Crossplay"],
+      code: "VALHEIM",
+      game: "valheim",
+      platform: "Crossplay",
+      blurb: "Crossplay world. Steam and Xbox players use the same join code.",
       joinCode: "308346",
-      joinHelp: "Open Valheim, choose Join Game, and enter the code. Crossplay is on.",
-      votes: []
+      instructions: "Open Valheim, choose Join Game, and enter this code.",
+      access: "Join code"
     }
   ],
-
-  // {valheimCode} is replaced with the Valheim card's joinCode.
-  join: [
-    {
-      title: "Modded Minecraft",
-      lede: "All the Mods 10, Create: Above and Beyond, and Cobblemon.",
-      steps: [
-        "Install the matching CurseForge modpack: All the Mods 10, Create: Above and Beyond, or Cobblemon.",
-        "Join the Discord.",
-        "Verify and link your Minecraft account in the #link-account channel to get whitelisted.",
-        "Add the server address in Minecraft and connect."
-      ]
-    },
-    {
-      title: "Vanilla Survival",
-      lede: "No modpack. No whitelist.",
-      steps: [
-        "Open Minecraft Java Edition.",
-        "Multiplayer → Add Server, and paste the Vanilla Survival address.",
-        "Connect. You spawn at the castle."
-      ]
-    },
-    {
-      title: "Valheim",
-      lede: "Crossplay, separate from the Minecraft worlds.",
-      steps: [
-        "Install Valheim. Crossplay is enabled.",
-        "Join a game with code {valheimCode}.",
-        "The same Discord is home for this world too."
-      ]
-    }
-  ],
-
+  join: {
+    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code.",
+    tracks: [
+      {
+        id: "modded",
+        title: "Modded servers",
+        detail: "All the Mods 10, Create: Above and Beyond, and Cobblemon.",
+        steps: [
+          "Install CurseForge and the matching modpack.",
+          "Launch that pack, add the server address from the card, and connect.",
+          "Join Discord and open #link-account. Verify and link your Minecraft account there to get whitelisted."
+        ],
+        links: [
+          {
+            label: "All the Mods 10 on CurseForge",
+            url: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-10"
+          },
+          {
+            label: "Create: Above and Beyond on CurseForge",
+            url: "https://www.curseforge.com/minecraft/modpacks/create-above-and-beyond"
+          }
+        ],
+        note: "For Cobblemon, install the pack named in Discord so your mods match the server."
+      },
+      {
+        id: "vanilla",
+        title: "Vanilla Survival",
+        detail: "Paper, castle spawn, open server.",
+        steps: [
+          "Open Minecraft Java Edition.",
+          "Choose Multiplayer, add a server, and paste the Vanilla address.",
+          "Join. There is no whitelist."
+        ]
+      },
+      {
+        id: "valheim",
+        title: "Valheim",
+        detail: "Crossplay.",
+        steps: [
+          "Open Valheim. Steam and Xbox can join the same world.",
+          "Choose Join Game and enter the code on the Valheim card."
+        ]
+      }
+    ]
+  },
   ranks: [
     {
       name: "Member",
-      detail: "Granted when you verify on Discord."
+      summary: "Granted on Discord verify."
     },
     {
       name: "Veteran",
-      detail: "Automatic after 50 hours played: 400 claimed chunks and /fly."
+      summary: "Automatic after 50 hours played: 400 claimed chunks and /fly.",
+      highlight: true
     },
     {
       name: "VIP",
-      detail: "Hand-picked by staff."
+      summary: "Hand-picked by staff."
     },
     {
       name: "Moderator",
-      detail: "Staff."
+      summary: "Staff who help keep chat and the worlds fair."
     },
     {
       name: "Admin",
-      detail: "Staff."
+      summary: "Runs the network."
     }
   ],
-
+  rulesIntro: "Play like someone else is building next to you.",
   rules: [
-    "Be respectful. No harassment, slurs, or personal attacks.",
+    "Be respectful. Harassment, slurs, and personal attacks are not welcome.",
     "No griefing and no stealing.",
     "No cheats, hacked clients, or x-ray.",
-    "No lag machines or anything else that tanks the server.",
-    "Keep chat PG-13.",
+    "No lag machines or anything built to drag the server down.",
+    "Keep chat friendly.",
     "Listen to staff."
   ]
 };
