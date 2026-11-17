@@ -26,7 +26,7 @@
   <meta name="twitter:image" content="https://flintandsteelnetwork.com/images/og.png">
   <meta name="twitter:image:alt" content="Flint and Steel Network, a veteran-run Minecraft and game server network">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self' https://api.mcstatus.io; base-uri 'none'; object-src 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self' https://api.mcstatus.io https://status.flintandsteelnetwork.com; base-uri 'none'; object-src 'none'; form-action 'none'">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
@@ -34,6 +34,7 @@
   <link rel="preload" href="fonts/russo-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preconnect" href="https://api.mcstatus.io" crossorigin>
+  <link rel="preconnect" href="https://status.flintandsteelnetwork.com" crossorigin>
   <link rel="stylesheet" href="css/site.css">
   <script type="application/ld+json">
   {
@@ -336,10 +337,10 @@
           <div class="card-actions">
             <button type="button" class="btn btn-steel btn-copy" data-copy="308346" data-copy-what="Valheim join code">Copy code</button>
           </div>
-          <p class="status is-code">
+          <p class="status is-checking" data-status>
             <span class="lamp" aria-hidden="true"></span>
-            <span class="status-label">Join with a code</span>
-            <span class="status-meta">No Minecraft status check</span>
+            <span class="status-label">Checking</span>
+            <span class="status-meta">Asking the server</span>
           </p>
           <span class="sr-only" data-announce aria-live="polite"></span>
         </article>

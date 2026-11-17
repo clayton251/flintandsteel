@@ -136,6 +136,54 @@
     }
   }
 
+  var NETWORK_STATUS_URL = "https://status.flintandsteelnetwork.com/api/servers.json";
+
+  function readNetworkEntry(entry) {
+    if (!entry || typeof entry !== "object") return null;
+    var online = entry.online === true ? true : entry.online === false ? false : null;
+    if (online === null) return null;
+    return {
+      online: online,
+      onlineCount: cleanCount(entry.players),
+      maxCount: cleanCount(entry.max),
+      version: ""
+    };
+  }
+
+  function loadNetworkStatuses(servers, parentSignal, token) {
+    if (!servers.length) return Promise.resolve();
+    var ctrl = new AbortController();
+    var timer = window.setTimeout(function () { ctrl.abort(); }, 8000);
+    var onParent = function () { ctrl.abort(); };
+    if (parentSignal) parentSignal.addEventListener("abort", onParent);
+    return fetch(NETWORK_STATUS_URL, { signal: ctrl.signal, cache: "no-store", redirect: "error" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("status");
+        return res.json();
+      })
+      .then(function (data) {
+        if (token !== round) return;
+        var payload = data && typeof data === "object" ? data : {};
+        servers.forEach(function (server) {
+          if (!Object.prototype.hasOwnProperty.call(payload, server.id)) {
+            paintStatus(server, null, true);
+            return;
+          }
+          var snapshot = readNetworkEntry(payload[server.id]);
+          if (!snapshot) paintStatus(server, null, true);
+          else paintStatus(server, snapshot, false);
+        });
+      })
+      .catch(function () {
+        if (token !== round) return;
+        servers.forEach(function (server) { paintStatus(server, null, true); });
+      })
+      .finally(function () {
+        window.clearTimeout(timer);
+        if (parentSignal) parentSignal.removeEventListener("abort", onParent);
+      });
+  }
+
   function loadStatus(server, parentSignal, token) {
     var url = minecraftStatusUrl(server.address);
     if (!/^[a-z0-9-]+$/.test(server.id)) return Promise.resolve();
@@ -176,11 +224,17 @@
     if (active) active.abort();
     active = new AbortController();
     setChecked("Checking servers…");
-    var jobs = serversFromPage().filter(function (server) {
+    var listed = serversFromPage().filter(function (server) {
+      return /^[a-z0-9-]+$/.test(server.id);
+    });
+    var jobs = listed.filter(function (server) {
       return server.game === "minecraft";
     }).map(function (server) {
       return loadStatus(server, active.signal, token);
     });
+    jobs.push(loadNetworkStatuses(listed.filter(function (server) {
+      return server.game !== "minecraft";
+    }), active.signal, token));
     return Promise.all(jobs).then(function () {
       if (token !== round) return;
       var time = new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });

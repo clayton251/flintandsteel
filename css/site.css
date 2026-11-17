@@ -736,7 +736,7 @@ h2 {
 .is-online .status-label { color: var(--online); }
 .is-offline .lamp { background: #ff6b5a; }
 .is-offline .status-label { color: var(--offline); }
-.is-unknown .status-label,
+.is-unknown .status-label { color: var(--ash); }
 .is-unconfirmed .status-label { color: var(--spark); }
 .is-code .lamp { background: var(--ember); }
 
