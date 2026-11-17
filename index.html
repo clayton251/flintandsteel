@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0e0c0a">
   <meta name="color-scheme" content="dark">
-  <title>Flint and Steel Network | Veteran-run Minecraft and Valheim servers</title>
-  <meta name="description" content="Veteran-run Minecraft network with All the Mods 10 (ATM10), Create: Above and Beyond, Cobblemon, vanilla survival, and a Valheim crossplay server.">
+  <title>Flint and Steel Network | Veteran-run Minecraft, Valheim, and Palworld servers</title>
+  <meta name="description" content="Veteran-run Minecraft network with All the Mods 10 (ATM10), Create: Above and Beyond, Cobblemon, vanilla survival, Valheim crossplay, and Palworld PvE.">
   <link rel="canonical" href="https://flintandsteelnetwork.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Flint and Steel Network">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Flint and Steel Network | Veteran-run Minecraft and Valheim servers">
-  <meta property="og:description" content="Veteran-run Minecraft network with All the Mods 10 (ATM10), Create: Above and Beyond, Cobblemon, vanilla survival, and a Valheim crossplay server.">
+  <meta property="og:title" content="Flint and Steel Network | Veteran-run Minecraft, Valheim, and Palworld servers">
+  <meta property="og:description" content="Veteran-run Minecraft network with All the Mods 10 (ATM10), Create: Above and Beyond, Cobblemon, vanilla survival, Valheim crossplay, and Palworld PvE.">
   <meta property="og:url" content="https://flintandsteelnetwork.com/">
   <meta property="og:image" content="https://flintandsteelnetwork.com/images/og.png">
   <meta property="og:image:secure_url" content="https://flintandsteelnetwork.com/images/og.png">
@@ -21,8 +21,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Flint and Steel Network, a veteran-run Minecraft and game server network">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Flint and Steel Network | Veteran-run Minecraft and Valheim servers">
-  <meta name="twitter:description" content="Veteran-run Minecraft network with All the Mods 10 (ATM10), Create: Above and Beyond, Cobblemon, vanilla survival, and a Valheim crossplay server.">
+  <meta name="twitter:title" content="Flint and Steel Network | Veteran-run Minecraft, Valheim, and Palworld servers">
+  <meta name="twitter:description" content="Veteran-run Minecraft network with All the Mods 10 (ATM10), Create: Above and Beyond, Cobblemon, vanilla survival, Valheim crossplay, and Palworld PvE.">
   <meta name="twitter:image" content="https://flintandsteelnetwork.com/images/og.png">
   <meta name="twitter:image:alt" content="Flint and Steel Network, a veteran-run Minecraft and game server network">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -60,7 +60,7 @@
         "@type": "ItemList",
         "name": "Flint and Steel servers",
         "itemListOrder": "https://schema.org/ItemListOrderAscending",
-        "numberOfItems": 5,
+        "numberOfItems": 6,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -118,6 +118,17 @@
               "gamePlatform": "Valheim",
               "url": "https://flintandsteelnetwork.com/#valheim"
             }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "VideoGame",
+              "name": "Flint and Steel Palworld",
+              "description": "Palworld PvE crossplay server for up to 20 players. No password. Search for Flint and Steel in Community Servers, or connect to palworld.flintandsteelnetwork.com:49096.",
+              "gamePlatform": "Palworld",
+              "url": "https://flintandsteelnetwork.com/#palworld"
+            }
           }
         ]
       }
@@ -172,7 +183,7 @@
         <p class="network" aria-hidden="true">Network</p>
         <p class="tagline">Strike a spark. Stay for the build.</p>
         <p class="about-line">A veteran-run Minecraft and game server network.</p>
-        <p class="lede">All the Mods 10, Create: Above and Beyond, Cobblemon, an open vanilla world, and a Valheim crossplay server.</p>
+        <p class="lede">All the Mods 10, Create: Above and Beyond, Cobblemon, an open vanilla world, a Valheim crossplay server, and a Palworld PvE server.</p>
         <div class="hero-actions">
           <a class="btn btn-ember" href="https://discord.gg/zWJfDJQcgP" target="_blank" rel="noopener noreferrer">Join the Flint and Steel Discord<span class="sr-only"> (opens in a new tab)</span></a>
           <a class="btn btn-steel" href="#servers">See the servers</a>
@@ -190,7 +201,7 @@
           </div>
         </div>
         <ul class="hero-facts">
-          <li>Minecraft and Valheim</li>
+          <li>Minecraft, Valheim, and Palworld</li>
           <li>Discord whitelist</li>
           <li>Veteran-run</li>
         </ul>
@@ -208,10 +219,11 @@
           <button type="button" class="btn btn-steel" id="refresh-status">Refresh status</button>
         </div>
       </div>
-      <p class="section-intro">Minecraft cards check in live. Copy an address, or open a map where we have one. Valheim stays a join code.</p>
+      <p class="section-intro">Minecraft cards check in live. Copy an address, or open a map where we have one. Valheim uses a join code. Palworld is in the community server list.</p>
       <p class="game-jumps">
         <a href="#minecraft">Minecraft</a>
         <a href="#valheim">Valheim</a>
+        <a href="#palworld">Palworld</a>
       </p>
       <p class="checked" id="status-checked">Checking servers…</p>
       <section class="game-group" id="minecraft" aria-labelledby="minecraft-title">
@@ -346,24 +358,46 @@
         </article>
         </div>
       </section>
-      <!--
-        Future game: copy the Valheim section above. Example:
-        <section class="game-group" id="palworld" aria-labelledby="palworld-title">
-          <div class="game-banner">
-            <svg class="game-emblem" viewBox="0 0 32 32" aria-hidden="true"></svg>
-            <h3 id="palworld-title">Palworld</h3>
+
+      <section class="game-group" id="palworld" aria-labelledby="palworld-title">
+        <div class="game-banner game-banner-palworld">
+          <svg class="game-emblem" viewBox="0 0 32 32" aria-hidden="true">
+            <ellipse cx="16" cy="23" rx="11" ry="4" fill="#2a241e"/>
+            <path d="M7 21c1.5-9 16.5-9 18 0" fill="#5ec8e5"/>
+            <rect x="15" y="7" width="2" height="12" fill="#e8b15a"/>
+            <polygon points="17,8 25,11 17,14" fill="#ff6a2a"/>
+          </svg>
+          <h3 id="palworld-title">Palworld</h3>
+        </div>
+        <div class="server-grid">
+        <article class="server-card" data-server="palworld" data-game="palworld" data-address="palworld.flintandsteelnetwork.com:49096">
+          <div class="card-kicker">
+            <span class="code">PALWORLD</span>
+            <span class="chip">Open</span>
           </div>
-          <div class="server-grid">
-            <article class="server-card" data-server="palworld" data-game="palworld"></article>
+          <h4>Flint and Steel Palworld</h4>
+          <p class="platform">PvE · Crossplay · 20 players</p>
+          <p class="blurb">Catch, build, and explore together. PvE, no password. Steam, Xbox, PS5, and Mac can join.</p>
+          <code class="address">palworld.<wbr>flintandsteelnetwork.<wbr>com:49096</code>
+          <p class="instructions">Join Multiplayer Game, open Community Servers, and search for Flint and Steel. Or connect directly with the address.</p>
+          <div class="card-actions">
+            <button type="button" class="btn btn-steel btn-copy" data-copy="palworld.flintandsteelnetwork.com:49096" data-copy-what="Palworld address">Copy address</button>
           </div>
-        </section>
-      -->
+          <p class="status is-checking" data-status>
+            <span class="lamp" aria-hidden="true"></span>
+            <span class="status-label">Checking</span>
+            <span class="status-meta">Asking the server</span>
+          </p>
+          <span class="sr-only" data-announce aria-live="polite"></span>
+        </article>
+        </div>
+      </section>
     </section>
 
     <section class="section" id="join">
       <p class="kicker">Start here</p>
       <h2>How to join</h2>
-      <p class="section-intro">Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code.</p>
+      <p class="section-intro">Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list.</p>
       <div class="join-grid">
         <article class="join-track">
           <h3>Modded servers</h3>
@@ -394,6 +428,15 @@
           <ol>
             <li>Open Valheim. Steam and Xbox can join the same world.</li>
             <li>Choose Join Game and enter the code on the Valheim card.</li>
+          </ol>
+        </article>
+        <article class="join-track">
+          <h3>Palworld</h3>
+          <p class="track-detail">PvE, crossplay, no password, up to 20 players.</p>
+          <ol>
+            <li>Open Palworld and choose Join Multiplayer Game.</li>
+            <li>Open Community Servers and search for Flint and Steel.</li>
+            <li>Or paste the address from the Palworld card into the connect box at the bottom.</li>
           </ol>
         </article>
       </div>
@@ -511,7 +554,6 @@
       </div>
       <a class="btn btn-ember" href="https://discord.gg/zWJfDJQcgP" target="_blank" rel="noopener noreferrer">Join the Flint and Steel Discord<span class="sr-only"> (opens in a new tab)</span></a>
       <a class="footer-support" href="https://ko-fi.com/flintandsteelnetwork" target="_blank" rel="noopener noreferrer">Support the network<span class="sr-only"> (opens in a new tab)</span></a>
-      <p class="soon">Coming soon: Palworld</p>
     </div>
   </footer>
   <noscript>

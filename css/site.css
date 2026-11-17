@@ -567,6 +567,13 @@ h2 {
     #17130f;
 }
 
+.game-banner-palworld {
+  border-left-color: #5ec8e5;
+  background:
+    linear-gradient(90deg, rgba(94, 200, 229, 0.16), transparent 62%),
+    #17130f;
+}
+
 .game-emblem {
   width: 40px;
   height: 40px;
