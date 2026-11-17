@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flint and Steel Network</title>
+  <meta name="description" content="Flint and Steel Network is a small public game-server community run by Clayton, a veteran. Minecraft modded and vanilla worlds, plus Valheim crossplay.">
+  <meta name="theme-color" content="#110e0c">
+  <meta property="og:title" content="Flint and Steel Network">
+  <meta property="og:description" content="Public Minecraft worlds and a Valheim crossplay server, run by Clayton, a veteran.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://clayton251.github.io/flintandsteel/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/pixelify-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" fill="#1a1410" stroke="#ff6a1a" stroke-width="2"/>
+        <path d="M7 24 L14.2 8.5 h2.2 L11 24 Z" fill="#4a433c"/>
+        <path d="M14 13 L26 7.4 l-1.5 4 4 1.1 -4.4 2 -1.1 4.2 -2.3-4.4 Z" fill="#e7eef3"/>
+        <rect x="14.5" y="14.5" width="4" height="4" fill="#ffb020"/>
+      </svg>
+      <span class="brand-name">Flint &amp; Steel</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span class="sr-only" data-toggle-label>Menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <a href="#servers">Servers</a>
+      <a href="#join">Join</a>
+      <a href="#ranks">Ranks</a>
+      <a href="#rules">Rules</a>
+      <a href="#vote">Vote</a>
+      <a class="btn btn-ember btn-small" data-discord href="https://discord.gg/zWJfDJQcgP">Join Discord</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="top">
+      <div class="embers" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Veteran-run public servers</p>
+          <h1 class="hero-title">
+            <span class="title-main">Flint and<br><span class="ember">Steel</span></span>
+            <span class="title-net">Network</span>
+          </h1>
+          <p class="tagline" data-tagline>A small public game-server community, run by Clayton, a veteran.</p>
+          <div class="hero-actions">
+            <a class="btn btn-ember" data-discord href="https://discord.gg/zWJfDJQcgP">Join Discord</a>
+            <a class="btn btn-ghost" href="#servers">See the servers</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg class="striker" viewBox="0 0 320 248">
+            <defs>
+              <linearGradient id="steelGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f7fbfd"/>
+                <stop offset="0.42" stop-color="#c5d0d8"/>
+                <stop offset="1" stop-color="#667480"/>
+              </linearGradient>
+              <linearGradient id="flintGrad" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#161311"/>
+                <stop offset="0.55" stop-color="#3c352f"/>
+                <stop offset="1" stop-color="#6a5f55"/>
+              </linearGradient>
+              <filter id="sparkGlow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="2.2" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <g class="ground">
+              <rect x="20" y="192" width="54" height="54"/>
+              <rect x="76" y="192" width="54" height="54"/>
+              <rect x="132" y="192" width="54" height="54" class="lit"/>
+              <rect x="188" y="192" width="54" height="54"/>
+              <rect x="244" y="192" width="54" height="54"/>
+            </g>
+            <polygon class="flint" points="42,188 70,96 118,78 146,112 132,188" fill="url(#flintGrad)"/>
+            <polygon points="70,96 118,78 108,108" fill="#efe6dc" opacity="0.55"/>
+            <polygon points="118,78 146,112 124,124" fill="#2a241f"/>
+            <g class="steel-arm">
+              <polygon points="124,118 236,48 258,74 146,144" fill="url(#steelGrad)"/>
+              <polygon points="236,48 258,74 284,56 262,30" fill="#f4f7fa"/>
+              <polygon points="246,58 268,84 258,74" fill="#8b99a4"/>
+            </g>
+            <g class="spark" filter="url(#sparkGlow)">
+              <path d="M132 96 l8 18 18 8 -18 8 -8 18 -8 -18 -18 -8 18 -8 Z" fill="#ffb020"/>
+              <circle cx="132" cy="122" r="3.2" fill="#fff6d8"/>
+              <circle cx="162" cy="104" r="2.3" fill="#ff6a1a"/>
+              <circle cx="108" cy="146" r="2.1" fill="#ff8a2a"/>
+              <circle cx="158" cy="146" r="1.7" fill="#ffd27a"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servers" aria-labelledby="servers-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Live from the forge</p>
+            <h2 id="servers-title">Servers</h2>
+            <p class="section-lede">Copy an address and join. Minecraft status is checked in your browser.</p>
+            <p class="pulse" id="forge-pulse">Checking the servers…</p>
+          </div>
+          <button class="btn btn-ghost" id="refresh-status" type="button">Refresh status</button>
+        </div>
+        <div id="server-grid" class="server-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="join" aria-labelledby="join-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">First spark</p>
+            <h2 id="join-title">How to join</h2>
+            <p class="section-lede">Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address.</p>
+          </div>
+        </div>
+        <div id="join-grid" class="join-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="ranks" aria-labelledby="ranks-title">
+      <div class="wrap split">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Time in the fire</p>
+            <h2 id="ranks-title">Ranks</h2>
+            <p class="section-lede">Member comes with Discord verify. Veteran follows hours played. VIP, Moderator, and Admin are staff calls.</p>
+          </div>
+        </div>
+        <ol id="rank-list" class="rank-list"></ol>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="rules" aria-labelledby="rules-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Posted on the wall</p>
+            <h2 id="rules-title">Rules</h2>
+            <p class="section-lede">A short list. Play like someone else has to live in the world after you log off.</p>
+          </div>
+        </div>
+        <ol id="rule-list" class="rule-list"></ol>
+      </div>
+    </section>
+
+    <section class="section" id="vote" aria-labelledby="vote-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Keep the bellows going</p>
+            <h2 id="vote-title">Vote</h2>
+            <p class="section-lede" data-vote-note>Every vote helps keep the servers online.</p>
+          </div>
+        </div>
+        <div id="vote-grid" class="vote-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-name">Flint and Steel Network</p>
+        <p class="footer-by">Run by Clayton, a veteran.</p>
+      </div>
+      <div class="footer-links">
+        <a data-discord href="https://discord.gg/zWJfDJQcgP">Discord</a>
+        <a href="#servers">Servers</a>
+        <a href="#vote">Vote</a>
+        <a href="#rules">Rules</a>
+      </div>
+      <p class="coming" data-coming>Coming soon: Palworld</p>
+    </div>
+    <div class="wrap footer-fine">
+      <p>Not affiliated with Mojang or Microsoft. Server icons shown on the cards come from the public status check.</p>
+    </div>
+  </footer>
+
+  <p id="live-region" class="sr-only" aria-live="polite"></p>
+  <noscript>
+    <div class="noscript wrap">
+      <p>Server list and live status need JavaScript. Discord is still open: <a href="https://discord.gg/zWJfDJQcgP">discord.gg/zWJfDJQcgP</a></p>
+    </div>
+  </noscript>
+
+  <script src="config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
