@@ -13,9 +13,9 @@ window.FNS_CONFIG = {
   name: "Flint and Steel Network",
   tagline: "Strike a spark. Stay for the build.",
   about: "A veteran-run Minecraft and game server network.",
-  lede: "All the Mods 10, Create: Above and Beyond, Cobblemon, an open vanilla world, and a Valheim crossplay server.",
+  lede: "All the Mods 10, Create: Above and Beyond, Cobblemon, an open vanilla world, a Valheim crossplay server, and a Palworld PvE server.",
   discordUrl: "https://discord.gg/zWJfDJQcgP",
-  comingSoon: "Palworld",
+  comingSoon: "",
   voteMessage: "Every vote helps keep the servers online.",
   servers: [
     {
@@ -111,10 +111,21 @@ window.FNS_CONFIG = {
       joinCode: "308346",
       instructions: "Open Valheim, choose Join Game, and enter this code.",
       access: "Join code"
+    },
+    {
+      id: "palworld",
+      name: "Flint and Steel Palworld",
+      code: "PALWORLD",
+      game: "palworld",
+      platform: "PvE · Crossplay",
+      blurb: "Catch, build, and explore together. PvE, up to 20 players, no password. Steam, Xbox, PS5, and Mac can join.",
+      address: "palworld.flintandsteelnetwork.com:49096",
+      instructions: "Join Multiplayer Game, open Community Servers, and search for Flint and Steel. Or connect directly with the address.",
+      access: "Open"
     }
   ],
   join: {
-    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code.",
+    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list.",
     tracks: [
       {
         id: "modded",
@@ -154,6 +165,16 @@ window.FNS_CONFIG = {
         steps: [
           "Open Valheim. Steam and Xbox can join the same world.",
           "Choose Join Game and enter the code on the Valheim card."
+        ]
+      },
+      {
+        id: "palworld",
+        title: "Palworld",
+        detail: "PvE, crossplay, no password, up to 20 players.",
+        steps: [
+          "Open Palworld and choose Join Multiplayer Game.",
+          "Open Community Servers and search for Flint and Steel.",
+          "Or paste the address from the Palworld card into the connect box at the bottom."
         ]
       }
     ]
