@@ -4,7 +4,8 @@
    Use public hostnames only. Do not add LAN IPs, internal hostnames, or ports.
 
    Join addresses are the public SRV names. Do not add a port.
-   The live map links stay on their current HTTP URLs until those move.
+   Live maps and the public status page are HTTPS hosts with no extra path.
+   Link the status page only as https://status.flintandsteelnetwork.com.
 
    Vote links use each site's vote page when that page has its own URL.
    Modded Minecraft Servers and TopG put the vote form on the listing, at #vote. */
@@ -27,7 +28,7 @@ window.FNS_CONFIG = {
       address: "atm10.flintandsteelnetwork.com",
       addressConfirmed: true,
       access: "Discord whitelist",
-      mapUrl: "http://atm10map.flintandsteel.playit.plus:43450",
+      mapUrl: "https://atm10map.flintandsteelnetwork.com",
       votes: [
         {
           label: "Modded Minecraft Servers",
@@ -49,7 +50,7 @@ window.FNS_CONFIG = {
       address: "vanilla.flintandsteelnetwork.com",
       addressConfirmed: true,
       access: "Open",
-      mapUrl: "http://map.flintandsteel.playit.plus:45481",
+      mapUrl: "https://map.flintandsteelnetwork.com",
       votes: [
         { label: "Minecraft MP", url: "https://minecraft-mp.com/server/366990/vote/" },
         { label: "MinecraftServers.org", url: "https://minecraftservers.org/vote/696273" },
