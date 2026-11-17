@@ -401,10 +401,20 @@ h2 {
   text-transform: uppercase;
 }
 
+.about-line,
 .lede {
   max-width: 38rem;
-  margin-top: 0.7rem;
   font-size: 1.12rem;
+}
+
+.about-line {
+  margin-top: 0.85rem;
+  color: var(--parchment);
+  font-weight: 600;
+}
+
+.lede {
+  margin-top: 0.3rem;
 }
 
 .hero-actions {
@@ -802,10 +812,21 @@ h2 {
   padding: 1.3rem 0 1.7rem;
 }
 
+.footer-id {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
 .footer-brand {
   font-family: var(--font-display);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.footer-about {
+  max-width: 24rem;
+  color: var(--ash);
 }
 
 .soon {

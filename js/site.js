@@ -144,7 +144,8 @@
         ),
         h("p", { class: "network", "aria-hidden": "true" }, "Network"),
         h("p", { class: "tagline" }, cfg.tagline),
-        h("p", { class: "lede" }, cfg.lede),
+        cfg.about ? h("p", { class: "about-line" }, cfg.about) : null,
+        cfg.lede ? h("p", { class: "lede" }, cfg.lede) : null,
         h("div", { class: "hero-actions" },
           discordLink("btn btn-ember", "Join Discord"),
           h("a", { class: "btn btn-steel", href: "#servers" }, "See the servers")
@@ -164,7 +165,7 @@
         h("ul", { class: "hero-facts" },
           h("li", {}, "Minecraft and Valheim"),
           h("li", {}, "Discord whitelist"),
-          h("li", {}, "Run by a veteran")
+          h("li", {}, "Veteran-run")
         )
       )
     );
@@ -314,7 +315,10 @@
   function renderFooter() {
     return h("footer", { class: "site-footer" },
       h("div", { class: "wrap footer-inner" },
-        h("p", { class: "footer-brand" }, cfg.name),
+        h("div", { class: "footer-id" },
+          h("p", { class: "footer-brand" }, cfg.name),
+          cfg.about ? h("p", { class: "footer-about" }, cfg.about) : null
+        ),
         discordLink("btn btn-ember", "Join Discord"),
         h("p", { class: "soon" }, "Coming soon: " + (cfg.comingSoon || "Palworld"))
       )
@@ -507,7 +511,9 @@
     }
     document.title = cfg.name;
     var description = document.querySelector('meta[name="description"]');
-    if (description && cfg.tagline) description.setAttribute("content", cfg.tagline + " " + cfg.lede);
+    if (description && cfg.tagline) {
+      description.setAttribute("content", cfg.tagline + " " + (cfg.about || cfg.lede || ""));
+    }
 
     var menuApi = function (toggle, mobile) { openMenu(toggle, mobile); };
     app.replaceChildren(

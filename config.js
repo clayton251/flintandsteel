@@ -4,7 +4,7 @@
    Asset paths elsewhere in the site are relative, so a future apex domain needs no rewrite.
 
    Cobblemon: `address` is a PLACEHOLDER. Leave addressConfirmed set to false
-   until Clayton confirms the hostname, then set it to true and clear addressNote.
+   until the hostname is confirmed, then set it to true and clear addressNote.
 
    Vote links use each site's vote page when that page has its own URL.
    Modded Minecraft Servers and TopG put the vote form on the listing, at #vote.
@@ -12,7 +12,8 @@
 window.FNS_CONFIG = {
   name: "Flint and Steel Network",
   tagline: "Strike a spark. Stay for the build.",
-  lede: "A small public game-server community run by Clayton, a veteran. Modded Minecraft, an open survival world, and Valheim crossplay.",
+  about: "A veteran-run Minecraft and game server network.",
+  lede: "Modded packs, an open survival world, and Valheim crossplay.",
   discordUrl: "https://discord.gg/zWJfDJQcgP",
   comingSoon: "Palworld",
   voteMessage: "Every vote helps keep the servers online.",

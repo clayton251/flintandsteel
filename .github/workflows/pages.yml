@@ -1,5 +1,5 @@
 # Deploys the static site to GitHub Pages.
-# Clayton: Settings > Pages > Build and deployment > Source must be "GitHub Actions".
+# Settings > Pages > Build and deployment > Source must be "GitHub Actions".
 name: Deploy static content to Pages
 
 on:
