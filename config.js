@@ -13,7 +13,7 @@ window.FNS_CONFIG = {
   name: "Flint and Steel Network",
   tagline: "Strike a spark. Stay for the build.",
   about: "A veteran-run Minecraft and game server network.",
-  lede: "All the Mods 10, Create: Above and Beyond, Cobblemon, an open vanilla world, a Valheim crossplay server, and a Palworld PvE server.",
+  lede: "All the Mods 10, Create: Above and Beyond, an open vanilla world, a Valheim crossplay server, and a Palworld PvE server.",
   discordUrl: "https://discord.gg/zWJfDJQcgP",
   comingSoon: "",
   voteMessage: "Every vote helps keep the servers online.",
@@ -80,28 +80,6 @@ window.FNS_CONFIG = {
       ]
     },
     {
-      id: "cobblemon",
-      name: "Cobblemon",
-      code: "COBBLEMON",
-      game: "minecraft",
-      platform: "Pokemon modpack",
-      blurb: "Pokemon modpack with a Pokemon-center themed spawn. Whitelisted through Discord.",
-      address: "cobblemon.flintandsteelnetwork.com",
-      addressConfirmed: true,
-      access: "Discord whitelist",
-      votes: [
-        {
-          label: "Modded Minecraft Servers",
-          url: "https://moddedminecraftservers.com/server/flint-and-steel-network-cobblemon.61132/#vote"
-        },
-        { label: "Minecraft MP", url: "https://minecraft-mp.com/server/367006/vote/" },
-        { label: "FTB Servers", url: "https://ftbservers.com/server/EB8QvcZO/vote" },
-        { label: "MinecraftServers.org", url: "https://minecraftservers.org/vote/696287" },
-        { label: "TopG", url: "https://topg.org/minecraft-servers/server-688624#vote" },
-        { label: "Minecraft Server List", url: "https://minecraft-server-list.com/server/525043/vote/" }
-      ]
-    },
-    {
       id: "valheim",
       name: "Valheim",
       code: "VALHEIM",
@@ -130,7 +108,7 @@ window.FNS_CONFIG = {
       {
         id: "modded",
         title: "Modded servers",
-        detail: "All the Mods 10, Create: Above and Beyond, and Cobblemon.",
+        detail: "All the Mods 10 and Create: Above and Beyond.",
         steps: [
           "Install CurseForge and the matching modpack.",
           "Launch that pack, add the server address from the card, and connect.",
@@ -145,8 +123,7 @@ window.FNS_CONFIG = {
             label: "Create: Above and Beyond on CurseForge",
             url: "https://www.curseforge.com/minecraft/modpacks/create-above-and-beyond"
           }
-        ],
-        note: "For Cobblemon, install the pack named in Discord so your mods match the server."
+        ]
       },
       {
         id: "vanilla",

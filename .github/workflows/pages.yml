@@ -72,9 +72,15 @@ jobs:
           if html_hosts != cfg_hosts:
               print("address mismatch", html_hosts, cfg_hosts)
               sys.exit(1)
-          for needle in ("All the Mods 10", "Create: Above and Beyond", "Cobblemon", "Valheim", "308346"):
+          for needle in ("All the Mods 10", "Create: Above and Beyond", "Valheim", "308346", "palworld.flintandsteelnetwork.com:49096"):
               if needle not in html:
                   print("missing static text", needle)
+                  sys.exit(1)
+          retired = re.compile(r"cobblemon", re.I)
+          for rel in ("index.html", "config.js", "js/site.js", "css/site.css", "site.webmanifest", "sitemap.xml", "robots.txt", "favicon.svg"):
+              text = pathlib.Path(rel).read_text(encoding="utf-8")
+              if retired.search(text):
+                  print("retired Cobblemon server is still mentioned", rel)
                   sys.exit(1)
           print("static copy matches config addresses")
           PY
