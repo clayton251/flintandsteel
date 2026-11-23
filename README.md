@@ -8,7 +8,7 @@ The public site is [https://flintandsteelnetwork.com/](https://flintandsteelnetw
 
 Change servers, join steps, ranks, rules, and vote links in [`index.html`](index.html) and [`config.js`](config.js). The page text is in `index.html` so search engines can read it without JavaScript. Keep the addresses in both files the same.
 
-Minecraft join addresses are the public SRV names on `flintandsteelnetwork.com`, with no port. Do not add LAN IPs or internal hostnames. Palworld publishes `palworld.flintandsteelnetwork.com:49096`. Counter-Strike 2 joins with the developer console command `connect cs2.flintandsteelnetwork.com:1740`. That hostname and port are the only CS2 address. Live maps are `https://map.flintandsteelnetwork.com` and `https://atm10map.flintandsteelnetwork.com`. The public status page is only `https://status.flintandsteelnetwork.com`, with no extra path.
+Minecraft join addresses are the public SRV names on `flintandsteelnetwork.com`, with no port. Do not add LAN IPs or internal hostnames. Palworld publishes `palworld.flintandsteelnetwork.com:49096`. Counter-Strike 2 joins with the developer console command `connect cs2.flintandsteelnetwork.com:1740`. That hostname and port are the only CS2 address. 7 Days to Die uses `7dtd.flintandsteelnetwork.com:28246`. That hostname and port are the only 7 Days to Die address. Live maps are `https://map.flintandsteelnetwork.com` and `https://atm10map.flintandsteelnetwork.com`. The public status page is only `https://status.flintandsteelnetwork.com`, with no extra path.
 
 The Discord invite in `config.js` is also written in the `noscript` block in `index.html`. Update both if the invite changes.
 

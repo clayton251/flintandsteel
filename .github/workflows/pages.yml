@@ -72,7 +72,7 @@ jobs:
           if html_hosts != cfg_hosts:
               print("address mismatch", html_hosts, cfg_hosts)
               sys.exit(1)
-          for needle in ("All the Mods 10", "Create: Above and Beyond", "Valheim", "308346", "palworld.flintandsteelnetwork.com:49096", "Counter-Strike 2", "connect cs2.flintandsteelnetwork.com:1740"):
+          for needle in ("All the Mods 10", "Create: Above and Beyond", "Valheim", "308346", "palworld.flintandsteelnetwork.com:49096", "Counter-Strike 2", "connect cs2.flintandsteelnetwork.com:1740", "7 Days to Die", "7dtd.flintandsteelnetwork.com:28246"):
               if needle not in html:
                   print("missing static text", needle)
                   sys.exit(1)

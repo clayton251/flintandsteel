@@ -581,6 +581,13 @@ h2 {
     #17130f;
 }
 
+.game-banner-7dtd {
+  border-left-color: #c4534a;
+  background:
+    linear-gradient(90deg, rgba(196, 83, 74, 0.2), transparent 62%),
+    #17130f;
+}
+
 .game-emblem {
   width: 40px;
   height: 40px;
