@@ -14,7 +14,7 @@ window.FNS_CONFIG = {
   name: "Flint and Steel Network",
   tagline: "Strike a spark. Stay for the build.",
   about: "A veteran-run Minecraft and game server network.",
-  lede: "All the Mods 10, Create: Above and Beyond, an open vanilla world, a Valheim crossplay server, a Palworld PvE server, Counter-Strike 2, and 7 Days to Die.",
+  lede: "All the Mods 10, Create: Above and Beyond, an open vanilla world, a Valheim crossplay server, a Palworld PvE server, Counter-Strike 2, 7 Days to Die, and Rust.",
   discordUrl: "https://discord.gg/zWJfDJQcgP",
   comingSoon: "",
   voteMessage: "Every vote helps keep the servers online.",
@@ -126,10 +126,22 @@ window.FNS_CONFIG = {
       listing: "Flint and Steel Network | 7 Days to Die PvE",
       instructions: "Search the in-game server browser for Flint and Steel. The listing is Flint and Steel Network | 7 Days to Die PvE. Or choose Connect to IP and use this address. The port is 28246.",
       access: "Open"
+    },
+    {
+      id: "rust",
+      name: "Flint and Steel Network | Vanilla PvP",
+      code: "RUST",
+      game: "rust",
+      platform: "Vanilla PvP · 50 slots",
+      blurb: "No mods, kits, or pay-to-win. Raiding is allowed everywhere. No password. Easy Anti-Cheat is on.",
+      connect: "client.connect rust.flintandsteelnetwork.com:4311",
+      instructions: "Search for Flint and Steel in the Community tab of the server browser, or press F1 and run this command.",
+      note: "Procedural Map, size 3500. Monthly forced wipe on the first Thursday, after Facepunch's update, in the afternoon US Eastern. The map and bases wipe. Blueprints are kept unless Facepunch forces a blueprint wipe. Rust+ works.",
+      access: "Open"
     }
   ],
   join: {
-    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list. Counter-Strike 2 uses a console connect command. 7 Days to Die is in the in-game server browser.",
+    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list. Counter-Strike 2 uses a console connect command. 7 Days to Die is in the in-game server browser. Rust is in the Community tab.",
     tracks: [
       {
         id: "modded",
@@ -199,6 +211,16 @@ window.FNS_CONFIG = {
           "Open 7 Days to Die.",
           "Search the in-game server browser for Flint and Steel. The listing is Flint and Steel Network | 7 Days to Die PvE.",
           "Or choose Connect to IP and paste the address from the card. The port is 28246."
+        ]
+      },
+      {
+        id: "rust",
+        title: "Rust",
+        detail: "Vanilla PvP, 50 slots, no password.",
+        steps: [
+          "Open Rust and search for Flint and Steel in the Community tab of the server browser.",
+          "Or press F1 and paste the connect command from the Rust card.",
+          "Use #rust-info, #rust-chat, and #rust-support on the Flint and Steel Discord."
         ]
       }
     ]
