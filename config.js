@@ -112,7 +112,7 @@ window.FNS_CONFIG = {
       address: "cs2.flintandsteelnetwork.com:1740",
       connect: "connect cs2.flintandsteelnetwork.com:1740",
       instructions: "Open the CS2 developer console and run this command.",
-      note: "The in-game server browser won't show this server. Use the connect command, or add cs2.flintandsteelnetwork.com:1740 to Steam > View > Game Servers > Favorites.",
+      note: "Find it in Steam > View > Game Servers > Internet (Counter-Strike 2, search 'Flint and Steel'), or open the CS2 console (~) and run the connect command.",
       access: "Open"
     }
   ],
