@@ -6,7 +6,7 @@ The public site is [https://flintandsteelnetwork.com/](https://flintandsteelnetw
 
 ## Edit the site
 
-Change servers, join steps, ranks, rules, and vote links in [`index.html`](index.html) and [`config.js`](config.js). The page text is in `index.html` so search engines can read it without JavaScript. Keep the addresses in both files the same. Each server also has its own page: `atm10/`, `create-above-and-beyond/`, `vanilla/`, `valheim/`, `palworld/`, `cs2/`, and `7-days-to-die/`.
+Change servers, join steps, ranks, rules, and vote links in [`index.html`](index.html) and [`config.js`](config.js). The page text is in `index.html` so search engines can read it without JavaScript. Keep the addresses in both files the same. Each server also has its own page: `atm10/`, `create-above-and-beyond/`, `vanilla/`, `valheim/`, `palworld/`, `cs2/`, `7-days-to-die/`, and `rust/`. Rust joins with the command `client.connect rust.flintandsteelnetwork.com:4311`.
 
 Minecraft join addresses are the public SRV names on `flintandsteelnetwork.com`, with no port. Do not add LAN IPs or internal hostnames. Palworld publishes `palworld.flintandsteelnetwork.com:49096`. Counter-Strike 2 joins with the developer console command `connect cs2.flintandsteelnetwork.com:1740`. That hostname and port are the only CS2 address. 7 Days to Die uses `7dtd.flintandsteelnetwork.com:28246`. That hostname and port are the only 7 Days to Die address. Live maps are `https://map.flintandsteelnetwork.com` and `https://atm10map.flintandsteelnetwork.com`. The public status page is only `https://status.flintandsteelnetwork.com`, with no extra path.
 
