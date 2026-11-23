@@ -74,6 +74,13 @@
     return cleaned.length > 48 ? cleaned.slice(0, 47) + "…" : cleaned;
   }
 
+  function cleanMap(value) {
+    if (typeof value !== "string") return "";
+    var cleaned = value.replace(/[^A-Za-z0-9_/-]/g, "");
+    if (!cleaned) return "";
+    return cleaned.slice(0, 32);
+  }
+
   function readStatus(data) {
     if (!data || typeof data !== "object") return null;
     var players = data.players && typeof data.players === "object" ? data.players : {};
@@ -114,6 +121,7 @@
       if (snapshot.onlineCount != null && snapshot.maxCount != null) parts.push(snapshot.onlineCount + "/" + snapshot.maxCount + " players");
       else if (snapshot.onlineCount != null) parts.push(snapshot.onlineCount + " players");
       if (snapshot.version) parts.push(snapshot.version);
+      if (snapshot.map) parts.push(snapshot.map);
       meta.textContent = parts.join(" · ") || "Server answered";
     } else if (!failed && snapshot && snapshot.online === false && server.addressConfirmed !== false) {
       status.classList.add("is-offline");
@@ -146,7 +154,8 @@
       online: online,
       onlineCount: cleanCount(entry.players),
       maxCount: cleanCount(entry.max),
-      version: ""
+      version: "",
+      map: cleanMap(entry.map)
     };
   }
 

@@ -1,9 +1,10 @@
 /* Flint and Steel Network — site config.
    The words players and search engines see are in index.html.
    When you change an address, vote link, or description, update both files.
-   Use public hostnames only. Do not add LAN IPs, internal hostnames, or ports.
+   Use public hostnames only. Do not add LAN IPs or internal hostnames.
 
-   Join addresses are the public SRV names. Do not add a port.
+   Minecraft join addresses are the public SRV names. Do not add a port to those.
+   Palworld, Counter-Strike 2, and 7 Days to Die include their public port.
    Live maps and the public status page are HTTPS hosts with no extra path.
    Link the status page only as https://status.flintandsteelnetwork.com.
 
@@ -13,7 +14,7 @@ window.FNS_CONFIG = {
   name: "Flint and Steel Network",
   tagline: "Strike a spark. Stay for the build.",
   about: "A veteran-run Minecraft and game server network.",
-  lede: "All the Mods 10, Create: Above and Beyond, an open vanilla world, a Valheim crossplay server, and a Palworld PvE server.",
+  lede: "All the Mods 10, Create: Above and Beyond, an open vanilla world, a Valheim crossplay server, a Palworld PvE server, Counter-Strike 2, and 7 Days to Die.",
   discordUrl: "https://discord.gg/zWJfDJQcgP",
   comingSoon: "",
   voteMessage: "Every vote helps keep the servers online.",
@@ -100,10 +101,35 @@ window.FNS_CONFIG = {
       address: "palworld.flintandsteelnetwork.com:49096",
       instructions: "Join Multiplayer Game, open Community Servers, and search for Flint and Steel. Or connect directly with the address.",
       access: "Open"
+    },
+    {
+      id: "cs2",
+      name: "Counter-Strike 2",
+      code: "CS2",
+      game: "cs2",
+      platform: "Casual & Deathmatch · 20 players",
+      blurb: "Casual and deathmatch. Connect from the developer console.",
+      address: "cs2.flintandsteelnetwork.com:1740",
+      connect: "connect cs2.flintandsteelnetwork.com:1740",
+      instructions: "Open the CS2 developer console and run this command.",
+      note: "Find it in Steam > View > Game Servers > Internet (Counter-Strike 2, search 'Flint and Steel'), or open the CS2 console (~) and run the connect command.",
+      access: "Open"
+    },
+    {
+      id: "7dtd",
+      name: "7 Days to Die",
+      code: "7DTD",
+      game: "7dtd",
+      platform: "PvE co-op · 16 players",
+      blurb: "Vanilla V 3.4 on the V1.x line. Navezgane map, PvE with no player killing, and a blood moon horde every 14 days. Easy Anti-Cheat is on. No password.",
+      address: "7dtd.flintandsteelnetwork.com:28246",
+      listing: "Flint and Steel Network | 7 Days to Die PvE",
+      instructions: "Search the in-game server browser for Flint and Steel. The listing is Flint and Steel Network | 7 Days to Die PvE. Or choose Connect to IP and use this address. The port is 28246.",
+      access: "Open"
     }
   ],
   join: {
-    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list.",
+    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list. Counter-Strike 2 uses a console connect command. 7 Days to Die is in the in-game server browser.",
     tracks: [
       {
         id: "modded",
@@ -152,6 +178,27 @@ window.FNS_CONFIG = {
           "Open Palworld and choose Join Multiplayer Game.",
           "Open Community Servers and search for Flint and Steel.",
           "Or paste the address from the Palworld card into the connect box at the bottom."
+        ]
+      },
+      {
+        id: "cs2",
+        title: "Counter-Strike 2",
+        detail: "Casual and deathmatch, up to 20 players.",
+        steps: [
+          "Install Counter-Strike 2 on Steam.",
+          "Enable the developer console in Settings > Game.",
+          "Press ~ to open the console.",
+          "Paste the connect command from the Counter-Strike 2 card."
+        ]
+      },
+      {
+        id: "7dtd",
+        title: "7 Days to Die",
+        detail: "Vanilla V 3.4, PvE co-op, up to 16 players. No password.",
+        steps: [
+          "Open 7 Days to Die.",
+          "Search the in-game server browser for Flint and Steel. The listing is Flint and Steel Network | 7 Days to Die PvE.",
+          "Or choose Connect to IP and paste the address from the card. The port is 28246."
         ]
       }
     ]
