@@ -2,11 +2,11 @@
 
 Static site for the Flint and Steel community. It is plain HTML, CSS, and JavaScript. There is no backend, no secrets, and no analytics.
 
-The public site is [https://flintandsteelnetwork.com/](https://flintandsteelnetwork.com/). Asset paths are relative, so the same files also work under [https://clayton251.github.io/flintandsteel/](https://clayton251.github.io/flintandsteel/) before the custom domain is enforced.
+The public site is [https://flintandsteelnetwork.com/](https://flintandsteelnetwork.com/). Asset paths are root-relative, such as `/css/site.css` and `/favicon.ico`, so a page in a folder still loads the shared CSS, scripts, and images when the site is served from the host root.
 
 ## Edit the site
 
-Change servers, join steps, ranks, rules, and vote links in [`index.html`](index.html) and [`config.js`](config.js). The page text is in `index.html` so search engines can read it without JavaScript. Keep the addresses in both files the same.
+Change servers, join steps, ranks, rules, and vote links in [`index.html`](index.html) and [`config.js`](config.js). The page text is in `index.html` so search engines can read it without JavaScript. Keep the addresses in both files the same. Each server also has its own page: `atm10/`, `create-above-and-beyond/`, `vanilla/`, `valheim/`, `palworld/`, `cs2/`, and `7-days-to-die/`.
 
 Minecraft join addresses are the public SRV names on `flintandsteelnetwork.com`, with no port. Do not add LAN IPs or internal hostnames. Palworld publishes `palworld.flintandsteelnetwork.com:49096`. Counter-Strike 2 joins with the developer console command `connect cs2.flintandsteelnetwork.com:1740`. That hostname and port are the only CS2 address. 7 Days to Die uses `7dtd.flintandsteelnetwork.com:28246`. That hostname and port are the only 7 Days to Die address. Live maps are `https://map.flintandsteelnetwork.com` and `https://atm10map.flintandsteelnetwork.com`. The public status page is only `https://status.flintandsteelnetwork.com`, with no extra path.
 
@@ -20,16 +20,7 @@ From this folder, for a domain-root preview:
 python3 -m http.server 8765
 ```
 
-Open `http://127.0.0.1:8765/`.
-
-For the GitHub project-page path, serve the parent folder while this repo is named `flintandsteel`:
-
-```bash
-cd ..
-python3 -m http.server 8765
-```
-
-Open `http://127.0.0.1:8765/flintandsteel/`.
+Open `http://127.0.0.1:8765/` and a server page such as `http://127.0.0.1:8765/atm10/`. Serve this folder as the site root. Root-relative assets do not load if the site is mounted under an extra path prefix.
 
 Live Minecraft status is loaded in the browser from `https://api.mcstatus.io`. The map and status pages are ordinary links. The site does not fetch them.
 

@@ -26,13 +26,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Reject root-absolute assets and private addresses
+      - name: Reject private addresses
         run: |
           python3 - << 'PY'
           import pathlib, re, sys
           root = pathlib.Path(".")
           bad = []
-          attr = re.compile(r"""(?:href|src)\s*=\s*["']/(?!/)""")
           css_url = re.compile(r"""url\(\s*["']?/(?!/)""")
           private_ip = re.compile(
               r"""\b(?:10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|172\.(?:1[6-9]|2\d|3[0-1])\.\d{1,3}\.\d{1,3})\b"""
@@ -46,8 +45,6 @@ jobs:
               if path.suffix.lower() not in suffixes:
                   continue
               text = path.read_text(encoding="utf-8", errors="replace")
-              if path.suffix.lower() in {".html", ".js", ".svg"} and attr.search(text):
-                  bad.append(f"{path}: root-absolute href or src")
               if path.suffix.lower() == ".css" and css_url.search(text):
                   bad.append(f"{path}: root-absolute CSS url")
               if private_ip.search(text):
@@ -77,14 +74,41 @@ jobs:
                   print("missing static text", needle)
                   sys.exit(1)
           retired = re.compile(r"cobblemon", re.I)
-          for rel in ("index.html", "config.js", "js/site.js", "css/site.css", "site.webmanifest", "sitemap.xml", "robots.txt", "favicon.svg"):
+          pages = [
+              "atm10/index.html",
+              "create-above-and-beyond/index.html",
+              "vanilla/index.html",
+              "valheim/index.html",
+              "palworld/index.html",
+              "cs2/index.html",
+              "7-days-to-die/index.html",
+          ]
+          key_name = "048a9cb561a593088c4d40225cf3a7df.txt"
+          key_body = pathlib.Path(key_name).read_bytes()
+          if key_body != b"048a9cb561a593088c4d40225cf3a7df":
+              print("IndexNow key file must contain only the key")
+              sys.exit(1)
+          if not pathlib.Path("favicon.ico").is_file():
+              print("missing favicon.ico")
+              sys.exit(1)
+          for rel in ("index.html", "config.js", "js/site.js", "css/site.css", "site.webmanifest", "sitemap.xml", "robots.txt", "favicon.svg", *pages):
               text = pathlib.Path(rel).read_text(encoding="utf-8")
               if retired.search(text):
                   print("retired Cobblemon server is still mentioned", rel)
                   sys.exit(1)
+          for rel in pages:
+              text = pathlib.Path(rel).read_text(encoding="utf-8")
+              for needle in ('href="/css/site.css"', 'src="/js/site.js"', 'href="/favicon.ico"'):
+                  if needle not in text:
+                      print("server page missing", needle, rel)
+                      sys.exit(1)
+              if text.count("<h1") != 1:
+                  print("server page needs one h1", rel)
+                  sys.exit(1)
           print("static copy matches config addresses")
           PY
-          cp -a index.html config.js favicon.svg CNAME robots.txt sitemap.xml site.webmanifest css js fonts images _site/
+          cp -a index.html config.js favicon.svg favicon.ico 048a9cb561a593088c4d40225cf3a7df.txt CNAME robots.txt sitemap.xml site.webmanifest css js fonts images _site/
+          cp -a atm10 create-above-and-beyond vanilla valheim palworld cs2 7-days-to-die _site/
           touch _site/.nojekyll
 
       - name: Setup Pages
