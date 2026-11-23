@@ -1,9 +1,10 @@
 /* Flint and Steel Network — site config.
    The words players and search engines see are in index.html.
    When you change an address, vote link, or description, update both files.
-   Use public hostnames only. Do not add LAN IPs, internal hostnames, or ports.
+   Use public hostnames only. Do not add LAN IPs or internal hostnames.
 
-   Join addresses are the public SRV names. Do not add a port.
+   Minecraft join addresses are the public SRV names. Do not add a port to those.
+   Palworld and Counter-Strike 2 include their public port.
    Live maps and the public status page are HTTPS hosts with no extra path.
    Link the status page only as https://status.flintandsteelnetwork.com.
 
@@ -13,7 +14,7 @@ window.FNS_CONFIG = {
   name: "Flint and Steel Network",
   tagline: "Strike a spark. Stay for the build.",
   about: "A veteran-run Minecraft and game server network.",
-  lede: "All the Mods 10, Create: Above and Beyond, an open vanilla world, a Valheim crossplay server, and a Palworld PvE server.",
+  lede: "All the Mods 10, Create: Above and Beyond, an open vanilla world, a Valheim crossplay server, a Palworld PvE server, and Counter-Strike 2.",
   discordUrl: "https://discord.gg/zWJfDJQcgP",
   comingSoon: "",
   voteMessage: "Every vote helps keep the servers online.",
@@ -100,10 +101,23 @@ window.FNS_CONFIG = {
       address: "palworld.flintandsteelnetwork.com:49096",
       instructions: "Join Multiplayer Game, open Community Servers, and search for Flint and Steel. Or connect directly with the address.",
       access: "Open"
+    },
+    {
+      id: "cs2",
+      name: "Counter-Strike 2",
+      code: "CS2",
+      game: "cs2",
+      platform: "Casual & Deathmatch · 20 players",
+      blurb: "Casual and deathmatch. Connect from the developer console.",
+      address: "cs2.flintandsteelnetwork.com:1740",
+      connect: "connect cs2.flintandsteelnetwork.com:1740",
+      instructions: "Open the CS2 developer console and run this command.",
+      note: "The in-game server browser won't show this server. Use the connect command, or add cs2.flintandsteelnetwork.com:1740 to Steam > View > Game Servers > Favorites.",
+      access: "Open"
     }
   ],
   join: {
-    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list.",
+    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list. Counter-Strike 2 uses a console connect command.",
     tracks: [
       {
         id: "modded",
@@ -152,6 +166,17 @@ window.FNS_CONFIG = {
           "Open Palworld and choose Join Multiplayer Game.",
           "Open Community Servers and search for Flint and Steel.",
           "Or paste the address from the Palworld card into the connect box at the bottom."
+        ]
+      },
+      {
+        id: "cs2",
+        title: "Counter-Strike 2",
+        detail: "Casual and deathmatch, up to 20 players.",
+        steps: [
+          "Install Counter-Strike 2 on Steam.",
+          "Enable the developer console in Settings > Game.",
+          "Press ~ to open the console.",
+          "Paste the connect command from the Counter-Strike 2 card."
         ]
       }
     ]
