@@ -87,6 +87,7 @@ jobs:
               "zomboid/index.html",
               "gmod/index.html",
               "dayz/index.html",
+              "arcade/index.html",
           ]
           key_name = "048a9cb561a593088c4d40225cf3a7df.txt"
           key_body = pathlib.Path(key_name).read_bytes()
@@ -96,7 +97,7 @@ jobs:
           if not pathlib.Path("favicon.ico").is_file():
               print("missing favicon.ico")
               sys.exit(1)
-          for rel in ("index.html", "config.js", "js/site.js", "css/site.css", "site.webmanifest", "sitemap.xml", "robots.txt", "favicon.svg", *pages):
+          for rel in ("index.html", "config.js", "js/site.js", "css/site.css", "site.webmanifest", "sitemap.xml", "robots.txt", "favicon.svg", "arcade/player.html", "arcade/player.js", "js/arcade.js", "arcade/homebrew/NOTICES.txt", *pages):
               text = pathlib.Path(rel).read_text(encoding="utf-8")
               if retired.search(text):
                   print("retired Cobblemon server is still mentioned", rel)
@@ -113,7 +114,7 @@ jobs:
           print("static copy matches config addresses")
           PY
           cp -a index.html config.js favicon.svg favicon.ico 048a9cb561a593088c4d40225cf3a7df.txt CNAME robots.txt sitemap.xml site.webmanifest css js fonts images _site/
-          cp -a atm10 create-above-and-beyond vanilla valheim palworld cs2 7-days-to-die rust terraria zomboid gmod dayz _site/
+          cp -a atm10 create-above-and-beyond vanilla valheim palworld cs2 7-days-to-die rust terraria zomboid gmod dayz arcade _site/
           touch _site/.nojekyll
 
       - name: Setup Pages
