@@ -1,0 +1,82 @@
+Flint and Steel Network arcade homebrew
+These ROMs are the only games this site hosts. Each one was taken from the
+author's public repository after the license was checked. The licenses below
+allow free redistribution. Commercial ROMs and BIOS files are not included.
+
+2048
+  File: 2048.gb
+  Size: 32768 bytes
+  SHA-256: 46f9ab6a5e9acb81c76e9c2c6526db1ed4e03b4fb6f36c23fb786e31f9659fc5
+  System: Game Boy
+  Author: Wyatt Ferguson
+  Source: https://github.com/wyattferguson/2048-gb
+  ROM: https://github.com/wyattferguson/2048-gb/blob/master/2048.gb
+  License: MIT
+
+  MIT License
+
+  Copyright (c) 2025 Wyatt Ferguson
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+µCity
+  File: ucity.gbc
+  Size: 131072 bytes
+  SHA-256: 9422ee2ca7b7ea1d46b58b2a429fff3f354dfd3e732dee1e7ae6220f148ce6e0
+  System: Game Boy Color
+  Author: AntonioND (Antonio Niño Díaz), also known as SkyLyrac
+  Source: https://github.com/AntonioND/ucity
+  ROM: https://github.com/AntonioND/ucity/releases/download/v1.3/ucity.gbc
+  License: GNU General Public License version 3 or later for the game.
+    Some source files, including GBT Player, are BSD-2-Clause.
+    Graphics and music are Creative Commons Attribution-ShareAlike 4.0.
+  License text: licenses/ucity-gpl-3.0.txt
+  CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+
+  The author's readme says the game is GPLv3 or later and that the media files
+  are CC BY-SA 4.0. A copy of the GPLv3 license text is stored next to this
+  notice. Source is available at the repository above.
+
+Miniplanets REMIX Ver (REV04)
+  File: miniplanets.bin
+  Size: 524288 bytes
+  SHA-256: e8aee1b9fedca87b638a7624709d7f6e1a2aff8a5222083346d1cd63963acbe7
+  System: Sega Genesis / Mega Drive
+  Author: Javier Degirolmo (Sik)
+  Source: https://github.com/sikthehedgehog/miniplanets
+  ROM: https://github.com/sikthehedgehog/miniplanets/blob/master/Miniplanets%20REMIX%20Ver%20(REV04).bin
+  License: zlib
+
+  Copyright (c) 2016, 2022 Javier Degirolmo
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not
+     be misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.

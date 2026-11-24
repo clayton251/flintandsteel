@@ -267,7 +267,9 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         links.forEach(function (link) {
-          var on = link.getAttribute("href") === "#" + entry.target.id;
+          var href = link.getAttribute("href") || "";
+          if (link.getAttribute("aria-current") === "page" && href.charAt(0) !== "#") return;
+          var on = href === "#" + entry.target.id;
           link.classList.toggle("is-current", on);
           if (on) link.setAttribute("aria-current", "true");
           else link.removeAttribute("aria-current");
