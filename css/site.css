@@ -595,6 +595,34 @@ h2 {
     #17130f;
 }
 
+.game-banner-terraria {
+  border-left-color: #7d9a4a;
+  background:
+    linear-gradient(90deg, rgba(125, 154, 74, 0.2), transparent 62%),
+    #17130f;
+}
+
+.game-banner-zomboid {
+  border-left-color: #8d9a62;
+  background:
+    linear-gradient(90deg, rgba(141, 154, 98, 0.2), transparent 62%),
+    #17130f;
+}
+
+.game-banner-gmod {
+  border-left-color: #3d7ec4;
+  background:
+    linear-gradient(90deg, rgba(61, 126, 196, 0.2), transparent 62%),
+    #17130f;
+}
+
+.game-banner-dayz {
+  border-left-color: #6b7044;
+  background:
+    linear-gradient(90deg, rgba(107, 112, 68, 0.22), transparent 62%),
+    #17130f;
+}
+
 .game-emblem {
   width: 40px;
   height: 40px;

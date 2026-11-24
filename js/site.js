@@ -76,7 +76,7 @@
 
   function cleanMap(value) {
     if (typeof value !== "string") return "";
-    var cleaned = value.replace(/[^A-Za-z0-9_/-]/g, "");
+    var cleaned = value.replace(/[^A-Za-z0-9_/ ,.-]/g, "").replace(/\s+/g, " ").trim();
     if (!cleaned) return "";
     return cleaned.slice(0, 32);
   }
@@ -155,7 +155,7 @@
       onlineCount: cleanCount(entry.players),
       maxCount: cleanCount(entry.max),
       version: "",
-      map: cleanMap(entry.map)
+      map: cleanMap(typeof entry.map === "string" && entry.map ? entry.map : entry.world)
     };
   }
 
