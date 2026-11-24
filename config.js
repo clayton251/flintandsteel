@@ -4,7 +4,7 @@
    Use public hostnames only. Do not add LAN IPs or internal hostnames.
 
    Minecraft join addresses are the public SRV names. Do not add a port to those.
-   Palworld, Counter-Strike 2, and 7 Days to Die include their public port.
+   Palworld, Counter-Strike 2, 7 Days to Die, Terraria, Project Zomboid, Garry's Mod, and DayZ include their public port.
    Live maps and the public status page are HTTPS hosts with no extra path.
    Link the status page only as https://status.flintandsteelnetwork.com.
 
@@ -14,7 +14,7 @@ window.FNS_CONFIG = {
   name: "Flint and Steel Network",
   tagline: "Strike a spark. Stay for the build.",
   about: "A veteran-run Minecraft and game server network.",
-  lede: "All the Mods 10, Create: Above and Beyond, an open vanilla world, a Valheim crossplay server, a Palworld PvE server, Counter-Strike 2, 7 Days to Die, and Rust.",
+  lede: "All the Mods 10, Create: Above and Beyond, an open vanilla world, a Valheim crossplay server, a Palworld PvE server, Counter-Strike 2, 7 Days to Die, Rust, Terraria, Project Zomboid, Garry's Mod, and DayZ.",
   discordUrl: "https://discord.gg/zWJfDJQcgP",
   comingSoon: "",
   voteMessage: "Every vote helps keep the servers online.",
@@ -138,10 +138,59 @@ window.FNS_CONFIG = {
       instructions: "Search for Flint and Steel in the Community tab of the server browser, or press F1 and run this command.",
       note: "Procedural Map, size 3500. Monthly forced wipe on the first Thursday, after Facepunch's update, in the afternoon US Eastern. The map and bases wipe. Blueprints are kept unless Facepunch forces a blueprint wipe. Rust+ works.",
       access: "Open"
+    },
+    {
+      id: "terraria",
+      name: "Flint and Steel Network | Terraria",
+      code: "TERRARIA",
+      game: "terraria",
+      platform: "1.4.5.8 · Classic · 16 slots",
+      blurb: "TShock on a large Classic world named FlintAndSteel. No password.",
+      address: "terraria.flintandsteelnetwork.com:4379",
+      instructions: "In Terraria, choose Multiplayer, then Join via IP. Use this address. The port is 4379. There is no password.",
+      note: "Nightly backups and empty-only automatic restarts and updates run around 6:10 AM ET.",
+      access: "Open"
+    },
+    {
+      id: "zomboid",
+      name: "Flint and Steel Network | Project Zomboid",
+      code: "ZOMBOID",
+      game: "zomboid",
+      platform: "Build 42 · Vanilla PvE · 32 slots",
+      blurb: "Vanilla PvE survival in Muldraugh, KY. No password. VAC secure.",
+      address: "zomboid.flintandsteelnetwork.com:57257",
+      instructions: "Direct connect or add this address to Favorites. Or find Flint and Steel Network | Project Zomboid in the in-game or Steam server browser.",
+      note: "Nightly backups and empty-only automatic restarts and updates run around 6:15 AM ET.",
+      access: "Open"
+    },
+    {
+      id: "gmod",
+      name: "Flint and Steel Network | Garry's Mod",
+      code: "GMOD",
+      game: "gmod",
+      platform: "Sandbox · 24 slots",
+      blurb: "Sandbox on gm_construct. No password. ULX and FPP prop protection.",
+      address: "gmod.flintandsteelnetwork.com:61937",
+      connect: "connect gmod.flintandsteelnetwork.com:61937",
+      instructions: "Open the Garry's Mod console with ~ and run this command. Or add gmod.flintandsteelnetwork.com:61937 to Steam Favorites.",
+      note: "Nightly backups and empty-only automatic restarts and updates run around 6:20 AM ET.",
+      access: "Open"
+    },
+    {
+      id: "dayz",
+      name: "Flint and Steel Network | DayZ Vanilla",
+      code: "DAYZ",
+      game: "dayz",
+      platform: "Vanilla PvP · 40 slots",
+      blurb: "Vanilla PvP on Chernarus. No mods and no password. BattlEye is on.",
+      address: "dayz.flintandsteelnetwork.com:32783",
+      instructions: "Direct Connect or add this address to Favorites. Or search Flint and Steel Network | DayZ Vanilla in the in-game or Steam server browser.",
+      note: "Nightly backups and empty-only automatic restarts and updates run around 6:25 AM ET.",
+      access: "Open"
     }
   ],
   join: {
-    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list. Counter-Strike 2 uses a console connect command. 7 Days to Die is in the in-game server browser. Rust is in the Community tab.",
+    intro: "Modded servers need the matching CurseForge pack and a Discord whitelist. Vanilla is just the address. Valheim is the join code. Palworld is in the community server list. Counter-Strike 2 uses a console connect command. 7 Days to Die is in the in-game server browser. Rust is in the Community tab. Terraria joins by IP. Project Zomboid is in the in-game or Steam server browser. Garry's Mod uses a console connect command or Steam Favorites. DayZ is in the in-game or Steam server browser.",
     tracks: [
       {
         id: "modded",
@@ -221,6 +270,46 @@ window.FNS_CONFIG = {
           "Open Rust and search for Flint and Steel in the Community tab of the server browser.",
           "Or press F1 and paste the connect command from the Rust card.",
           "Use #rust-info, #rust-chat, and #rust-support on the Flint and Steel Discord."
+        ]
+      },
+      {
+        id: "terraria",
+        title: "Terraria",
+        detail: "1.4.5.8 on TShock, Classic, 16 slots, no password.",
+        steps: [
+          "Open Terraria and choose Multiplayer, then Join via IP.",
+          "Enter terraria.flintandsteelnetwork.com and port 4379. There is no password.",
+          "The world is the large Classic world FlintAndSteel."
+        ]
+      },
+      {
+        id: "zomboid",
+        title: "Project Zomboid",
+        detail: "Build 42 vanilla PvE, 32 slots, no password.",
+        steps: [
+          "Open Project Zomboid and choose Direct Connect, or add the address to Favorites.",
+          "Use zomboid.flintandsteelnetwork.com:57257. There is no password.",
+          "Or find Flint and Steel Network | Project Zomboid in the in-game or Steam server browser."
+        ]
+      },
+      {
+        id: "gmod",
+        title: "Garry's Mod",
+        detail: "Sandbox on gm_construct, 24 slots, no password.",
+        steps: [
+          "Open Garry's Mod.",
+          "Press ~ to open the console and paste the connect command from the Garry's Mod card.",
+          "Or add gmod.flintandsteelnetwork.com:61937 to Steam Favorites."
+        ]
+      },
+      {
+        id: "dayz",
+        title: "DayZ",
+        detail: "Vanilla PvP on Chernarus, 40 slots, no password.",
+        steps: [
+          "Open DayZ and choose Direct Connect, or add the address to Favorites.",
+          "Use dayz.flintandsteelnetwork.com:32783. There is no password.",
+          "Or search Flint and Steel Network | DayZ Vanilla in the in-game or Steam server browser."
         ]
       }
     ]

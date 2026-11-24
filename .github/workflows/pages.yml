@@ -69,7 +69,7 @@ jobs:
           if html_hosts != cfg_hosts:
               print("address mismatch", html_hosts, cfg_hosts)
               sys.exit(1)
-          for needle in ("All the Mods 10", "Create: Above and Beyond", "Valheim", "308346", "palworld.flintandsteelnetwork.com:49096", "Counter-Strike 2", "connect cs2.flintandsteelnetwork.com:1740", "7 Days to Die", "7dtd.flintandsteelnetwork.com:28246", "Rust", "client.connect rust.flintandsteelnetwork.com:4311"):
+          for needle in ("All the Mods 10", "Create: Above and Beyond", "Valheim", "308346", "palworld.flintandsteelnetwork.com:49096", "Counter-Strike 2", "connect cs2.flintandsteelnetwork.com:1740", "7 Days to Die", "7dtd.flintandsteelnetwork.com:28246", "Rust", "client.connect rust.flintandsteelnetwork.com:4311", "Terraria", "terraria.flintandsteelnetwork.com:4379", "Project Zomboid", "zomboid.flintandsteelnetwork.com:57257", "Garry's Mod", "connect gmod.flintandsteelnetwork.com:61937", "DayZ", "dayz.flintandsteelnetwork.com:32783"):
               if needle not in html:
                   print("missing static text", needle)
                   sys.exit(1)
@@ -83,6 +83,10 @@ jobs:
               "cs2/index.html",
               "7-days-to-die/index.html",
               "rust/index.html",
+              "terraria/index.html",
+              "zomboid/index.html",
+              "gmod/index.html",
+              "dayz/index.html",
           ]
           key_name = "048a9cb561a593088c4d40225cf3a7df.txt"
           key_body = pathlib.Path(key_name).read_bytes()
@@ -109,7 +113,7 @@ jobs:
           print("static copy matches config addresses")
           PY
           cp -a index.html config.js favicon.svg favicon.ico 048a9cb561a593088c4d40225cf3a7df.txt CNAME robots.txt sitemap.xml site.webmanifest css js fonts images _site/
-          cp -a atm10 create-above-and-beyond vanilla valheim palworld cs2 7-days-to-die rust _site/
+          cp -a atm10 create-above-and-beyond vanilla valheim palworld cs2 7-days-to-die rust terraria zomboid gmod dayz _site/
           touch _site/.nojekyll
 
       - name: Setup Pages
